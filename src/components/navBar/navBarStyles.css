@@ -4,9 +4,10 @@
     justify-content: space-between;
     align-items: center;
     list-style: none;
-    position: relative;
+    position: fixed;
     background-color: black;
     padding: 12px 20px;
+    transition: 1s ease-in-out;
 }
 .logo img{
     width: 40px;
