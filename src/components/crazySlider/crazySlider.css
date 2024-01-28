@@ -54,12 +54,14 @@
     background-color: gray;
     letter-spacing: 3px;
     font-weight: 500;
+    border-radius: 20px;
 
 }
 .carousel .list .item .content  button:nth-child(2){
-    background-color: transparent;
     color: navajowhite;
-    border: 1px solid navajowhite;
+    background: rgba(106, 103, 103, 0.5); /* Color blanco con 50% de opacidad */
+    backdrop-filter: blur(10px); /* Desenfoque de 10 píxeles */
+
 }
 
 

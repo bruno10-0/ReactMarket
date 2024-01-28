@@ -1,11 +1,12 @@
 import "./crazySlider.css"
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { useEffect, useState } from "react";
+import { items,reorganizarArray } from "./items";
 
 export const CazySlider = () => {
     // eslint-disable-next-line no-unused-vars
     const [userInteracted, setUserInteracted] = useState(false);
-
+    console.log(items);
     useEffect(() => {
         const nextBtn = document.getElementById('next');
         const prevBtn = document.getElementById('prev');
@@ -54,69 +55,41 @@ export const CazySlider = () => {
         };
     }, []);
 
+
+    const nuevoArray = reorganizarArray(items)
+    console.log(nuevoArray);
     return (
         <>
             <div className="carousel">
-                <div className="list">
-                    <div className="item">
-                        <img src="https://i.redd.it/fczz7oh6d0161.jpg" />
+            <div className="list">
+                {items.map((item, index) => (
+                    <div key={index} className="item">
+                        <img src={item.img} alt={item.title} />
                         <div className="content">
-                            <div className="author">LOREM</div>
-                            <div className="title">LOREM</div>
-                            <div className="topic">LOREM</div>
-                            <div className="des">
-                                Lorem1 ipsum dolor sit amet consectetur adipisicing elit. Consectetur esse beatae aspernatur. Numquam, officiis minima.
-                            </div>
+                            <div className="author">{item.author}</div>
+                            <div className="title">{item.title}</div>
+                            <div className="topic">{item.topic}</div>
+                            <div className="des">{item.des}</div>
                             <div className="buttons">
-                                <button>LOREM</button>
-                                <button>LOREM</button>
+                                <button>BUTTON 1</button>
+                                <button>BUTTON 2</button>
                             </div>
                         </div>
                     </div>
-
-                    <div className="item">
-                        <img src="https://static.vecteezy.com/system/resources/previews/016/417/032/original/cool-shoes-for-playing-basketball-vector.jpg" />
-                        <div className="content">
-                            <div className="author">LOREM</div>
-                            <div className="title">LOREM</div>
-                            <div className="topic">LOREM</div>
-                            <div className="des">
-                                Lorem2 ipsum dolor sit amet consectetur adipisicing elit. Consectetur esse beatae aspernatur. Numquam, officiis minima.
-                            </div>
-                            <div className="buttons">
-                                <button>LOREM</button>
-                                <button>LOREM</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                ))}
+            </div>
                 {/*thumbnail*/}
                 <div className="thumbnail">
-                    <div className="item">
-                        <img src="https://static.vecteezy.com/system/resources/previews/016/417/032/original/cool-shoes-for-playing-basketball-vector.jpg" />
+                {nuevoArray.map((item, index) => (
+                    <div key={index} className="item">
+                        <img src={item.img} alt={item.title} />
                         <div className="content">
-                            <div className="title">
-                                lorem
-                            </div>
-                            <div className="des">
-                                lorem
-                            </div>
+                            <div className="title">{item.title}</div>
+                            <div className="des">{item.desSmall}</div>
                         </div>
                     </div>
-                    <div className="item">
-                        <img src="https://i.redd.it/fczz7oh6d0161.jpg" />
-                        <div className="content">
-                            <div className="title">
-                                lorem
-                            </div>
-                            <div className="des">
-                                lorem
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
+                ))}
+            </div>
                 {/*arrows*/}
                 <div className="arrows">
                     <button id="prev" className="flex justify-center items-center">
