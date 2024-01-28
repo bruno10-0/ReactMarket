@@ -1,19 +1,22 @@
 import "./crazySlider.css"
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
-import { useEffect } from "react";
-export const CazySlider = () => {
-    useEffect(() => {
-        const nexDom = document.getElementById('next');
-        const prevDom = document.getElementById('prev');
-        const carouselDom = document.querySelector('.carousel');
-        const listItemDom = document.querySelector('.carousel .list');
-        const thumbnailDom = document.querySelector('.carousel .thumbnail');
+import { useEffect, useState } from "react";
 
-        nexDom.onclick = function () {
+export const CazySlider = () => {
+    const [userInteracted, setUserInteracted] = useState(false);
+
+    useEffect(() => {
+        const nextBtn = document.getElementById('next');
+        const prevBtn = document.getElementById('prev');
+        const carousel = document.querySelector('.carousel');
+        const listItem = document.querySelector('.carousel .list');
+        const thumbnail = document.querySelector('.carousel .thumbnail');
+
+        nextBtn.onclick = function () {
             showSlider('next');
         };
 
-        prevDom.onclick = function () {
+        prevBtn.onclick = function () {
             showSlider('prev');
         };
 
@@ -23,9 +26,11 @@ export const CazySlider = () => {
         let runAutoRun;
 
         function startAutoAdvance() {
-            runAutoRun = setTimeout(() => {
-                nexDom.click();
-            }, timeAutoNext);
+            if (userInteracted) {
+                runAutoRun = setTimeout(() => {
+                    nextBtn.click();
+                }, timeAutoNext);
+            }
         }
 
         function showSlider(type) {
@@ -33,37 +38,37 @@ export const CazySlider = () => {
             const itemThumbnail = document.querySelectorAll('.carousel .thumbnail .item');
 
             if (type === 'next') {
-                listItemDom.appendChild(itemSlider[0]);
-                thumbnailDom.appendChild(itemThumbnail[0]);
-                carouselDom.classList.add('next');
+                listItem.appendChild(itemSlider[0]);
+                thumbnail.appendChild(itemThumbnail[0]);
+                carousel.classList.add('next');
             } else {
                 let positionLastItem = itemSlider.length - 1;
-                listItemDom.prepend(itemSlider[positionLastItem]);
-                thumbnailDom.prepend(itemThumbnail[positionLastItem]);
-                carouselDom.classList.add('prev');
+                listItem.prepend(itemSlider[positionLastItem]);
+                thumbnail.prepend(itemThumbnail[positionLastItem]);
+                carousel.classList.add('prev');
             }
 
             clearTimeout(runTimeOut);
             clearTimeout(runAutoRun);
             runTimeOut = setTimeout(() => {
-                carouselDom.classList.remove('next');
-                carouselDom.classList.remove('prev');
+                carousel.classList.remove('next');
+                carousel.classList.remove('prev');
             }, timeRunning);
 
+            setUserInteracted(true);
             startAutoAdvance();
         }
 
-        startAutoAdvance(); // Iniciar avance automático al cargar el componente
+        startAutoAdvance();
 
-        // Limpiar temporizadores al desmontar el componente
         return () => {
             clearTimeout(runTimeOut);
             clearTimeout(runAutoRun);
         };
-    }, []);
+    }, [userInteracted]);
     return (
         <>
-            <div className="carousel prev">
+            <div className="carousel">
                 <div className="list">
                     <div className="item">
                         <img src="https://i.redd.it/fczz7oh6d0161.jpg" />
@@ -72,7 +77,7 @@ export const CazySlider = () => {
                             <div className="title">LOREM</div>
                             <div className="topic">LOREM</div>
                             <div className="des">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus voluptatum aut veniam porro aspernatur vel?
+                                Lorem1 ipsum dolor sit amet consectetur adipisicing elit. Consectetur esse beatae aspernatur. Numquam, officiis minima.
                             </div>
                             <div className="buttons">
                                 <button>LOREM</button>
@@ -88,7 +93,7 @@ export const CazySlider = () => {
                             <div className="title">LOREM</div>
                             <div className="topic">LOREM</div>
                             <div className="des">
-                               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus voluptatum aut veniam porro aspernatur vel?
+                                Lorem2 ipsum dolor sit amet consectetur adipisicing elit. Consectetur esse beatae aspernatur. Numquam, officiis minima.
                             </div>
                             <div className="buttons">
                                 <button>LOREM</button>
