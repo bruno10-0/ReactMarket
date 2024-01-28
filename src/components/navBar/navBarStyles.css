@@ -35,7 +35,7 @@
     left: 0;
     width: 0;
     height: 1px;
-    background-color: white;
+    background-color: navajowhite;
     transition: 0.15s ease-in-out;
 }
 .menu li a:hover:after{
@@ -92,4 +92,3 @@
     right: 0;
 }
 }
-

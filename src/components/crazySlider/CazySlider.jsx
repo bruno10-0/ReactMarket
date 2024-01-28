@@ -72,7 +72,7 @@ export const CazySlider = () => {
                             <div className="title">LOREM</div>
                             <div className="topic">LOREM</div>
                             <div className="des">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, minima.
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus voluptatum aut veniam porro aspernatur vel?
                             </div>
                             <div className="buttons">
                                 <button>LOREM</button>
@@ -88,7 +88,7 @@ export const CazySlider = () => {
                             <div className="title">LOREM</div>
                             <div className="topic">LOREM</div>
                             <div className="des">
-                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, voluptate.
+                               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus voluptatum aut veniam porro aspernatur vel?
                             </div>
                             <div className="buttons">
                                 <button>LOREM</button>

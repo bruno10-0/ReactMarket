@@ -36,6 +36,9 @@
     font-size: 5em;
     list-style: 1.3em;
 }
+.carousel .list .item .content .title{
+    font-size: 3em;
+}
 .carousel .list .item .content .topic{
     color: burlywood;
 }
@@ -51,6 +54,7 @@
     background-color: gray;
     letter-spacing: 3px;
     font-weight: 500;
+
 }
 .carousel .list .item .content  button:nth-child(2){
     background-color: transparent;
@@ -92,6 +96,10 @@
 }
 .thumbnail .item .content .title{
     font-weight: bold;
+    color: navajowhite;
+}
+.thumbnail .item .content .des{
+    color: rgb(243, 227, 204);
 }
 
 
@@ -135,6 +143,9 @@
     filter: blur(20px);
     opacity: 0;
     animation: showContent 0.5s 1s linear 1 forwards;
+}
+.carousel .list .item:nth-child(1) .des{
+    width: 80%;
 }
 @keyframes showContent{
     to{
@@ -280,9 +291,39 @@
         font-size: 10px;
     }
     .carousel .list .item .content .title{
-        font-size: 20px;
+        font-size: 25px;
     }
     .carousel .list .item .content .topic{
         font-size: 40px;
+    }
+}
+@media screen and (max-width:280px){
+    .carousel .list .item .content .author{
+        font-size: 10px;
+    }
+    .carousel .list .item .content .title{
+        font-size: 25px;
+    }
+    .carousel .list .item .content .topic{
+        font-size: 35px;
+    }
+    .carousel .list .item .content .des{
+        font-size: 13px;
+    }
+    .carousel .list .item .content  button{
+        font-size: 10px;
+    }
+    .thumbnail .item{
+        width: 100px;
+        height: 170px;
+    }
+    @keyframes outImage{
+        to{
+            width: 100px;
+            height: 170px;
+            border-radius: 20px;
+            left: 50%;
+            bottom: 50px;
+        }
     }
 }
