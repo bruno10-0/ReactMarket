@@ -3,6 +3,7 @@ import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { useEffect, useState } from "react";
 
 export const CazySlider = () => {
+    // eslint-disable-next-line no-unused-vars
     const [userInteracted, setUserInteracted] = useState(false);
 
     useEffect(() => {
@@ -20,18 +21,8 @@ export const CazySlider = () => {
             showSlider('prev');
         };
 
-        let timeAutoNext = 7000;
         let timeRunning = 2000;
         let runTimeOut;
-        let runAutoRun;
-
-        function startAutoAdvance() {
-            if (userInteracted) {
-                runAutoRun = setTimeout(() => {
-                    nextBtn.click();
-                }, timeAutoNext);
-            }
-        }
 
         function showSlider(type) {
             const itemSlider = document.querySelectorAll('.carousel .list .item');
@@ -49,23 +40,20 @@ export const CazySlider = () => {
             }
 
             clearTimeout(runTimeOut);
-            clearTimeout(runAutoRun);
             runTimeOut = setTimeout(() => {
                 carousel.classList.remove('next');
                 carousel.classList.remove('prev');
+                setUserInteracted(false); // Reset user interaction state after animation
             }, timeRunning);
 
             setUserInteracted(true);
-            startAutoAdvance();
         }
-
-        startAutoAdvance();
 
         return () => {
             clearTimeout(runTimeOut);
-            clearTimeout(runAutoRun);
         };
-    }, [userInteracted]);
+    }, []);
+
     return (
         <>
             <div className="carousel">
