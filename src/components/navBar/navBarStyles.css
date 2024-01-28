@@ -8,6 +8,7 @@
     background-color: black;
     padding: 12px 20px;
     transition: 1s ease-in-out;
+    z-index: 100;
 }
 .logo img{
     width: 40px;

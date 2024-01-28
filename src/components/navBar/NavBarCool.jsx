@@ -1,4 +1,4 @@
-import './navBarStyles.css';
+import "./navBarStyles.css"
 import { useState, useEffect } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
