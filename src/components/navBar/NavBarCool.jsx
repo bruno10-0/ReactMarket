@@ -1,4 +1,4 @@
-import "./navBarStyles.css"
+import "./navBarStyles.css";
 import { useState, useEffect } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
@@ -18,13 +18,20 @@ export const NavBar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [prevScrollPos]);
 
+    const handleMenuToggle = () => {
+        const blurElement = document.querySelector(".content .blur");
+        if (blurElement) {
+            blurElement.style.display = blurElement.style.display === "block" ? "none" : "block";
+        }
+    };
+
     const navStyle = {
         top: visible ? "0" : "-80px",
     };
 
     return (
         <header>
-            <nav>
+            <nav className="content">
                 <ul id="nav" className="nav-bar" style={navStyle}>
                     <li className="logo">
                         <a href="#">
@@ -39,7 +46,7 @@ export const NavBar = () => {
                             </svg>
                         </a>
                     </li>
-                    <input type="checkbox" id="check" />
+                    <input type="checkbox" id="check" onClick={handleMenuToggle} />
                     <span className="menu">
                         <li><a href="#">lorem</a></li>
                         <li><a href="#">lorem</a></li>
@@ -50,6 +57,7 @@ export const NavBar = () => {
                     </span>
                     <label htmlFor="check" className="open-menu"><RxHamburgerMenu /></label>
                 </ul>
+                <div className="blur"></div>
             </nav>
         </header>
     );

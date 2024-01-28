@@ -1,3 +1,6 @@
+.content{
+    position: relative;
+}
 .nav-bar{
     width: 100%;
     display: flex;
@@ -60,12 +63,19 @@
 #check{
     display: none;
 }
-
-
-
+.content .blur{
+    z-index: 91;
+    position: fixed;
+    height:100vh;
+    width: 100vw;
+    backdrop-filter: blur(10px);
+    display: none;
+}
 
 /*responsive*/
 @media(max-width:610px){
+
+
 .menu{
     flex-direction: column;
     align-items: center;
@@ -90,5 +100,8 @@
 }
 #check:checked ~ .menu{
     right: 0;
+}
+#check:checked ~ .content > .blur {
+    display: block;
 }
 }

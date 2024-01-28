@@ -43,7 +43,7 @@ export const CazySlider = () => {
             runTimeOut = setTimeout(() => {
                 carousel.classList.remove('next');
                 carousel.classList.remove('prev');
-                setUserInteracted(false); // Reset user interaction state after animation
+                setUserInteracted(false);
             }, timeRunning);
 
             setUserInteracted(true);
