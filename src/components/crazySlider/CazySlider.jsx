@@ -27,9 +27,7 @@ export const CazySlider = () => {
         let timeRunning = 2000;
         let runTimeOut;
         let timeAutoNext = 7000;
-        let runAutoRun  = setTimeout(() => {
-            nextBtn.click();
-        }, timeAutoNext);
+        let runAutoRun
 
         function showSlider(type) {
             const itemSlider = document.querySelectorAll('.carousel .list .item');
@@ -72,6 +70,7 @@ export const CazySlider = () => {
 
     //a partir de la array de objetos que recibimos para listaremos en el carousel, creamos una nueva con el orden modificado
     const nuevoArray = reorganizarArray(items)
+    
     return (
         <>
             <div className="carousel">
