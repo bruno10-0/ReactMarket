@@ -1,13 +1,14 @@
 import "./crazySlider.css"
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { useEffect, useState } from "react";
-import { items,reorganizarArray } from "./items";
+import { items, reorganizarArray } from "./items";
 
 export const CazySlider = () => {
 
     //este useEffect lo usamos para controlar los eventos al hacer click en el boton para cambiar de thumbnail 
     // eslint-disable-next-line no-unused-vars
     const [userInteracted, setUserInteracted] = useState(false);
+
     useEffect(() => {
         const nextBtn = document.getElementById('next');
         const prevBtn = document.getElementById('prev');
@@ -25,6 +26,10 @@ export const CazySlider = () => {
 
         let timeRunning = 2000;
         let runTimeOut;
+        let timeAutoNext = 7000;
+        let runAutoRun  = setTimeout(() => {
+            nextBtn.click();
+        }, timeAutoNext);
 
         function showSlider(type) {
             const itemSlider = document.querySelectorAll('.carousel .list .item');
@@ -48,11 +53,20 @@ export const CazySlider = () => {
                 setUserInteracted(false);
             }, timeRunning);
 
+            clearTimeout(runAutoRun)
+
             setUserInteracted(true);
+
+            runAutoRun = setTimeout(() => {
+                nextBtn.click();
+            }, timeAutoNext);
+    
         }
 
+       
         return () => {
             clearTimeout(runTimeOut);
+            clearTimeout(runAutoRun);
         };
     }, []);
 
@@ -61,41 +75,41 @@ export const CazySlider = () => {
     return (
         <>
             <div className="carousel">
-            <div className="list">
-                {items.map((item, index) => (
-                    <div key={index} className="item">
-                        <img src={item.img} alt={item.title} />
-                        <div className="content">
-                            <div className="author">{item.author}</div>
-                            <div className="title">{item.title}</div>
-                            <div className="topic">{item.topic}</div>
-                            <div className="des">{item.des}</div>
-                            <div className="buttons">
-                                <button>BUTTON 1</button>
-                                <button>BUTTON 2</button>
+                <div className="list">
+                    {items.map((item, index) => (
+                        <div key={index} className="item">
+                            <img src={item.img} alt={item.title} />
+                            <div className="content">
+                                <div className="author">{item.author}</div>
+                                <div className="title">{item.title}</div>
+                                <div className="topic">{item.topic}</div>
+                                <div className="des">{item.des}</div>
+                                <div className="buttons">
+                                    <button className="hover:scale-105 transition-transform duration-300 ease-in-out">BUTTON 1</button>
+                                    <button className="hover:scale-105 transition-transform duration-300 ease-in-out">BUTTON 2</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
                 {/*thumbnail*/}
                 <div className="thumbnail">
-                {nuevoArray.map((item, index) => (
-                    <div key={index} className="item hover:scale-105 transition-transform duration-300 ease-in-out">
-                        <img src={item.img} alt={item.title} />
-                        <div className="content">
-                            <div className="title">{item.author}</div>
-                            <div className="des">{item.desSmall}</div>
+                    {nuevoArray.map((item, index) => (
+                        <div key={index} className="item hover:scale-105 transition-transform duration-300 ease-in-out">
+                            <img src={item.img} alt={item.title} />
+                            <div className="content">
+                                <div className="title">{item.author}</div>
+                                <div className="des">{item.desSmall}</div>
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
                 {/*arrows*/}
                 <div className="arrows">
-                    <button id="prev" className="flex justify-center items-center">
+                    <button id="prev" className="flex justify-center items-center hover:scale-125 transition-transform duration-300 ease-in-out">
                         <SlArrowLeft />
                     </button>
-                    <button id="next" className="flex justify-center items-center">
+                    <button id="next" className="flex justify-center items-center hover:scale-125 transition-transform duration-300 ease-in-out">
                         <SlArrowRight />
                     </button>
                 </div>
