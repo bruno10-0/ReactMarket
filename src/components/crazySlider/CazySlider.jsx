@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import { items,reorganizarArray } from "./items";
 
 export const CazySlider = () => {
+
+    //este useEffect lo usamos para controlar los eventos al hacer click en el boton para cambiar de thumbnail 
     // eslint-disable-next-line no-unused-vars
     const [userInteracted, setUserInteracted] = useState(false);
-    console.log(items);
     useEffect(() => {
         const nextBtn = document.getElementById('next');
         const prevBtn = document.getElementById('prev');
@@ -55,9 +56,8 @@ export const CazySlider = () => {
         };
     }, []);
 
-
+    //a partir de la array de objetos que recibimos para listaremos en el carousel, creamos una nueva con el orden modificado
     const nuevoArray = reorganizarArray(items)
-    console.log(nuevoArray);
     return (
         <>
             <div className="carousel">
@@ -81,10 +81,10 @@ export const CazySlider = () => {
                 {/*thumbnail*/}
                 <div className="thumbnail">
                 {nuevoArray.map((item, index) => (
-                    <div key={index} className="item">
+                    <div key={index} className="item hover:scale-105 transition-transform duration-300 ease-in-out">
                         <img src={item.img} alt={item.title} />
                         <div className="content">
-                            <div className="title">{item.title}</div>
+                            <div className="title">{item.author}</div>
                             <div className="des">{item.desSmall}</div>
                         </div>
                     </div>
