@@ -2,7 +2,9 @@ import "./navBarStyles.css";
 import { useState, useEffect } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
-
+import { CiHeart, CiShop } from "react-icons/ci";
+import { HiOutlineShoppingCart } from "react-icons/hi2";
+import { SearchBar } from "../searchBar/searchBar";
 export const NavBar = () => {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
@@ -48,11 +50,27 @@ export const NavBar = () => {
                     </li>
                     <input type="checkbox" id="check" onClick={handleMenuToggle} />
                     <span className="menu">
-                        <li><a href="#">lorem</a></li>
-                        <li><a href="#">lorem</a></li>
-                        <li><a href="#">lorem</a></li>
-                        <li><a href="#">lorem</a></li>
-                        <li><a href="#">lorem</a></li>
+                        
+                            <SearchBar/>
+
+                        <li>
+                            <a href="#" className="p-2 rounded-full bg-white bg-opacity-25">
+                                <CiShop className="icon w-6 h-6 " />
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" className="p-2 rounded-full bg-white bg-opacity-25">
+                                <CiHeart className="icon w-6 h-6 " />
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" className=" p-2 rounded-full bg-white bg-opacity-25">
+                                <HiOutlineShoppingCart className="icon w-6 h-6 " />
+                            </a>
+                        </li>
+
                         <label htmlFor="check" className="close-menu"><IoCloseOutline /></label>
                     </span>
                     <label htmlFor="check" className="open-menu"><RxHamburgerMenu /></label>

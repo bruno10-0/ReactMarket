@@ -5,7 +5,7 @@ export const items = [
         "topic": "Air Max",
         "des": "Con una amortiguación Air Max de última generación y un diseño aerodinámico, estas zapatillas son la elección perfecta para corredores que buscan rendimiento y estilo en cada paso.",
         "desSmall": "Estilo y comodidad",
-        "img": "https://www.10wallpaper.com/wallpaper/1280x960/1604/Nike_air_max_90-Vector_Art_Design_HD_Wallpaper_1280x960.jpg"
+        "img": "https://i.pinimg.com/originals/df/db/c9/dfdbc9135eb519f72cebcdc35bbd5e80.jpg"
     },
     {
         "author": "Nike Jordan",
@@ -13,7 +13,7 @@ export const items = [
         "topic": "Jordan",
         "des": "Inspiradas en el legendario legado de Michael Jordan, estas zapatillas ofrecen un soporte excepcional y una tracción superior en la cancha, combinando estilo y rendimiento a la perfección.",
         "desSmall": "Estilo icónico",
-        "img": "https://www.wallpapertip.com/wmimgs/85-858478_low-poly-jordan-1-wallpaper-sneakers-jordan-1.jpg"
+        "img": "https://i.pinimg.com/originals/8d/68/7a/8d687a450976422fba0505ae941dba19.jpg"
     },
     {
         "author": "Nike Air Force 1",
@@ -21,7 +21,7 @@ export const items = [
         "topic": "Air Force 1",
         "des": "Las Nike Air Force 1 son un símbolo de estilo urbano. Con su diseño clásico y su construcción de alta calidad, estas zapatillas elevan cualquier atuendo casual con un toque de elegancia y sofisticación.",
         "desSmall": "Estilo legendario",
-        "img": "https://cdn.dribbble.com/users/4285822/screenshots/11871036/travis15-01_4x.png"
+        "img": "https://i.pinimg.com/originals/61/61/e5/6161e52292bdb821027b70eeddac2935.jpg"
     },
     {
         "author": "Nike Revolution",
@@ -29,7 +29,7 @@ export const items = [
         "topic": "Revolution",
         "des": "Las zapatillas Nike Revolution están diseñadas para corredores que buscan ligereza y versatilidad. Con una parte superior transpirable y una entresuela acolchada, ofrecen confort y soporte en cada carrera.",
         "desSmall": "Ligereza y rendimiento",
-        "img": "https://a.allegroimg.com/s1024/0c4f2c/9c33349642079ec424056b379c04"
+        "img": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f16ba228184663.55d1fb74a4736.jpg"
     },
     {
         "author": "Nike React",
@@ -37,7 +37,7 @@ export const items = [
         "topic": "React",
         "des": "Las zapatillas Nike React combinan comodidad y rendimiento. Con una amortiguación React innovadora y una parte superior transpirable, te brindan una experiencia de carrera suave y receptiva en cada kilómetro.",
         "desSmall": "Comodidad sin igual",
-        "img": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/14abd462929121.5aa0237548488.jpg"
+        "img": "https://i.pinimg.com/originals/1b/e9/9f/1be99f18e39cc8828f973a2b01329d3c.jpg"
     }
 ];
 
