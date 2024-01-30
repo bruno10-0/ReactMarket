@@ -7,6 +7,7 @@ function App() {
     <>
     <NavBar/>
     <CazySlider/>
+    <div className='w-1 h-2 m-0 p-0'></div>
     </>
   )
 }

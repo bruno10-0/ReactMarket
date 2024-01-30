@@ -4,7 +4,8 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
 import { CiHeart, CiShop } from "react-icons/ci";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
-import { SearchBar } from "../searchBar/searchBar";
+import { SearchBar, } from "../searchBar/searchBar";
+import { SearchBarResponsive } from "../searchBar/searchBarResponsive";
 export const NavBar = () => {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
@@ -52,6 +53,7 @@ export const NavBar = () => {
                     <span className="menu">
                         
                             <SearchBar/>
+                            
 
                         <li>
                             <a href="#" className="p-2 rounded-full bg-white bg-opacity-25">
@@ -73,9 +75,12 @@ export const NavBar = () => {
 
                         <label htmlFor="check" className="close-menu"><IoCloseOutline /></label>
                     </span>
+                    <SearchBarResponsive/>
                     <label htmlFor="check" className="open-menu"><RxHamburgerMenu /></label>
                 </ul>
+                
                 <div className="blur"></div>
+                
             </nav>
         </header>
     );

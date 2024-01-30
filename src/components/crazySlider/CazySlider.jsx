@@ -77,15 +77,15 @@ export const CazySlider = () => {
                 <div className="list">
                     {items.map((item, index) => (
                         <div key={index} className="item">
-                            <img src={item.img} alt={item.title} />
+                            <img src={item.img} alt={item.title} className="w-full"/>
                             <div className="content">
                                 <div className="author">{item.author}</div>
                                 <div className="title">{item.title}</div>
                                 <div className="topic">{item.topic}</div>
                                 <div className="des">{item.des}</div>
                                 <div className="buttons">
-                                    <button className="hover:scale-105 transition-transform duration-300 ease-in-out">BUTTON 1</button>
-                                    <button className="hover:scale-105 transition-transform duration-300 ease-in-out">BUTTON 2</button>
+                                    <button className="hover:scale-105 transition-transform duration-300 ease-in-out">VER</button>
+                                    <button className="hover:scale-105 transition-transform duration-300 ease-in-out">AGREGAR</button>
                                 </div>
                             </div>
                         </div>

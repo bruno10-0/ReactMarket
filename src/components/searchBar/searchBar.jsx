@@ -22,7 +22,7 @@ export const SearchBar = () => {
             <div className="input-box">
                 <input
                     className=''
-                    placeholder='Search..'
+                    placeholder='Buscar...'
                     type="text" />
                 <span className='search '>
                     <i><CiSearch className='search-icon w-6 h-6' /></i>
