@@ -1,13 +1,13 @@
-import {NavBar} from './components/navBar/NavBarCool'
 import { CazySlider } from './components/crazySlider/CazySlider'
+import { NavBar2 } from './components/navBar/navBar'
 function App() {
  
 
   return (
     <>
-    <NavBar/>
+    <NavBar2/>
     <CazySlider/>
-    <div className='w-1 h-2 m-0 p-0'></div>
+    <div className='h-screen'></div>
     </>
   )
 }

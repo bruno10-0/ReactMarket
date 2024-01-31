@@ -33,14 +33,18 @@
 .carousel .list .item .content .title,
 .carousel .list .item .content .topic{
     font-weight: bold;
-    font-size: 5em;
+    font-size: 1rem;
     list-style: 1.3em;
 }
 .carousel .list .item .content .title{
-    font-size: 3em;
+    font-size: 2rem;
 }
 .carousel .list .item .content .topic{
-    color: burlywood;
+    font-size: 4rem;
+    color: violet;
+}
+.carousel .list .item .content .des{
+    font-size: 1rem;
 }
 .carousel .list .item .content .buttons{
     display: grid;
@@ -58,7 +62,7 @@
 
 }
 .carousel .list .item .content  button:nth-child(2){
-    color: navajowhite;
+    color: violet;
     background: rgba(106, 103, 103, 0.5);
     backdrop-filter: blur(10px);
 
@@ -99,15 +103,15 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    color: rgb(243, 227, 204);
+    color: violet;
 }
 
 .thumbnail .item .content .title{
     font-weight: bold;
-    color: navajowhite;
+    color: violet;
 }
 .thumbnail .item .content .des{
-    color: rgb(243, 227, 204);
+    color: white;
 }
 
 /*arrow*/
@@ -127,13 +131,13 @@
     border-radius: 50%;
     background-color: rgb(71, 70, 70);
     border:none ;
-    color: navajowhite;
+    color: violet;
     font-size: large;
     transition: .5s;
     z-index: 90;
 }
 .arrows button:hover{
-    background-color: navajowhite;
+    background-color: violet;
     color: rgb(71, 70, 70);;
 }
 .carousel .list .item:nth-child(1){
@@ -268,7 +272,7 @@
 .time{
     width: 0%;
     height: 5px;
-    background-color: navajowhite;
+    background-color: violet;
     position: absolute;
     z-index: 100;
     top: 0;

@@ -1,0 +1,123 @@
+.headerNav{
+    width: 100vw;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 100;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+    align-items: center;
+    gap: 10px;
+    padding-right: 10px;
+    transition: 1s ease-in-out;
+    z-index: 100;
+    border: 1px solid violet;
+}
+#chk1{
+    display: none;
+}
+i{
+    color: white;
+    cursor: pointer;
+}
+.headerNav .logo{
+    flex: 1;
+    color: white;
+    margin-left: 50px;
+}
+.headerNav .search-box{
+    flex: 1;
+    position: relative;
+}
+.search-box input{
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid white;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    color: violet;
+    font-size: 16px;
+    text-align: center;
+    text-overflow: ellipsis;
+    padding-left: 15px;
+    padding-right: 45px;
+}
+.search-box button{
+   width: 40px;
+   height: 40px;
+   border-radius: 50%; 
+   background: transparent;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: none;
+   position: absolute;
+   top: 0;
+   right: 0;
+   transform: scale(0.9);
+}
+.headerNav ul{
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.headerNav ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 680;
+    padding: 10px 15px;
+    transition: transform 0.3s ease;
+ }
+.headerNav ul li {
+    display: flex;
+    flex-direction: row;
+}
+.headerNav ul li a:hover{
+    transform: scale(1.2);
+    color: violet;
+ }
+ .headerNav .menu{
+    font-size: 2.5rem;
+    display: none;
+ }
+ @media(max-width:1000px){
+    .search-box button{
+        position: absolute;
+    }
+    .headerNav ul{
+        position: fixed;
+        top: 67px;
+        right: -100%;
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(2px);
+        height: 100vh;
+        width: 50%;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        transition: right 0.5s linear;
+        margin: 1px;
+
+    }
+    .headerNav .menu{
+        display: flex;
+        width: 100px;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    #chk1:checked ~ ul{
+        right: 0;
+    }
+ }
+ @media(max-width:600px){
+    .headerNav .logo{
+        margin-left: 8px;
+    }
+    .headerNav ul{
+        width: 100%;
+    }
+ }

@@ -26,7 +26,7 @@ export const CazySlider = () => {
 
         let timeRunning = 2000;
         let runTimeOut;
-        let timeAutoNext = 7000;
+        let timeAutoNext = 11000;
         let runAutoRun
 
         function showSlider(type) {
