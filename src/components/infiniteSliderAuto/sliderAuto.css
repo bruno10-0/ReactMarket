@@ -1,38 +1,26 @@
-@keyframes slide{
-    form{
-       transform: translateX(0); 
-    }to{
-        transform: translateX(-100%); 
-    }
-}
-
 .logos-content{
-    width: 100vw;
+    width: 100%;
     height: auto;
     overflow: hidden;
-    padding: 10px;
-    background-color: black;
+    padding: 15px;
+    top: 0;
+    background: black;
     position: relative;
     display: flex;
+    z-index: 1;
+    border-top: 1px solid violet;
+    border-bottom: 1px solid violet;
 }
 .logos-content:before,
 .logos-content:after{
     position: absolute;
     top: 0;
-    width: 150px;
+    width: 20px;
     height: 100%;
     content: "";
     z-index: 2;
 }
-.logos-content:before{
-    left: 0;
-    background: linear-gradient(to left, rgba(255 ,255 ,255 ,0),violet);
-   
-}
-.logos-content:after{
-    right: 0;
-    background: linear-gradient(to right, rgba(255 ,255 ,255 ,0), violet);
-}
+
 .logos-content:hover .logos-slide{
     animation-play-state: paused;
 }
@@ -42,13 +30,20 @@
    
 }
 .logos-slide img{
-height: 40px;
-padding-left:190px;
+height: 25px;
+padding-left:270px;
 }
 
 @media(max-width:1000px){
     .logos-content:before,
     .logos-content:after{
-        width:50px;
+        width:10px;
+    }
+}
+@keyframes slide{
+    form{
+       transform: translateX(0); 
+    }to{
+        transform: translateX(-100%); 
     }
 }

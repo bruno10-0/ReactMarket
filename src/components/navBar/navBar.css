@@ -1,5 +1,5 @@
 .headerNav{
-    width: 100vw;
+    width: 100%;
     height: 70px;
     display: flex;
     justify-content: space-between;
@@ -10,7 +10,7 @@
     align-items: center;
     gap: 10px;
     padding-right: 10px;
-    transition: 1s ease-in-out;
+    transition: .5s ease-in-out;
     z-index: 100;
     border: 1px solid violet;
 }
@@ -69,7 +69,7 @@ i{
     color: white;
     font-weight: 680;
     padding: 10px 15px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out;
  }
 .headerNav ul li {
     display: flex;
@@ -89,7 +89,7 @@ i{
     }
     .headerNav ul{
         position: fixed;
-        top: 67px;
+        top: 70px;
         right: -100%;
         background: rgba(0,0,0,0.9);
         backdrop-filter: blur(2px);
@@ -98,13 +98,12 @@ i{
         flex-direction: column;
         align-items: center;
         padding: 30px;
-        transition: right 0.5s linear;
-        margin: 1px;
-
+        transition: right 0.2s ease-in-out;
+        justify-content: space-around;
     }
     .headerNav .menu{
         display: flex;
-        width: 100px;
+        width: 50px;
         align-items: center;
         justify-content: center;
         
@@ -114,10 +113,24 @@ i{
     }
  }
  @media(max-width:600px){
+    .headerNav{
+        transition: .2s ease-in-out;
+    }
     .headerNav .logo{
         margin-left: 8px;
     }
     .headerNav ul{
         width: 100%;
+    }
+    .headerNav .logo div h1{
+        display: none;
+    }
+    .headerNav .logo{
+        justify-content: center;
+    }
+ }
+ @media screen and (max-width:280px){
+    .headerNav .logo .nav-logo{
+        display: none;
     }
  }
