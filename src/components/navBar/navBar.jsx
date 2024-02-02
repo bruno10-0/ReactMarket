@@ -86,7 +86,7 @@ export const NavBar2 = () => {
                             <p className="text-sm font-extralight">10</p>
                         </i>
                     </div>
-                    {/* <div className="dropdown dropdown-end">
+                    <div className="dropdown dropdown-end">
                         <TbColorSwatch tabIndex={0} role="button" className="text-2xl text-white" />
                         <div tabIndex={0} className="rounded-lg dropdown-content w-52 bg-primary flex flex-col justify-start gap-2 p-2">
 
@@ -102,7 +102,7 @@ export const NavBar2 = () => {
                                 </div>
                             </button>
                         </div>
-                    </div> */}
+                    </div>
 
                 </div>
 
