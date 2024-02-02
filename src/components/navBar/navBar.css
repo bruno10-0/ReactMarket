@@ -63,7 +63,7 @@ i{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 10px;
+    font-size: 12px;
     gap: 20px;
 }
 .headerNav ul li a{
@@ -120,7 +120,7 @@ i{
         transition: 0.2s ease-in-out;
     }
     .headerNav .Menu{
-        display: flex; 
+        display:flex; 
     }
     #chk1:checked ~ ul{
         right: 0;
@@ -167,5 +167,5 @@ i{
   }  
 
   .navbar{
-    z-index: 100;
+    z-index: 102;
   }

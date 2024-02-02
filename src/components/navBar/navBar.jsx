@@ -3,11 +3,13 @@ import { FaWhatsapp, FaBars } from "react-icons/fa";
 import { TbColorSwatch } from "react-icons/tb";
 import { useState, useEffect } from "react";
 import "./navBar.css"
+
 export const NavBar2 = () => {
     const [animate, setAnimate] = useState(false);
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
 
+    //escucha los eventos del scroll, sirve para ainmar la subida y bajada del navBar
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollPos = window.pageYOffset;
@@ -18,11 +20,11 @@ export const NavBar2 = () => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, [prevScrollPos]);
-
+    //define la altura a la que se desplazara hacia el top(arriba) el nav bar al hacer scroll hacia abajo
     const navStyle = {
         top: visible ? "0" : "-70px",
     };
-
+    // sirve para animar al icono de el carrito, al usuario cargar un item en el mismo este realizara una animacion
     useEffect(() => {
         if (animate) {
             const timeoutId = setTimeout(() => {
@@ -32,11 +34,46 @@ export const NavBar2 = () => {
             return () => clearTimeout(timeoutId);
         }
     }, [animate]);
-
+    //lista de themas, nos ayudara a listar los botones para cambiar de tema
+    const themes = [
+        "light",
+        "dark",
+        "cupcake",
+        "bumblebee",
+        "emerald",
+        "corporate",
+        "synthwave",
+        "retro",
+        "cyberpunk",
+        "valentine",
+        "halloween",
+        "garden",
+        "forest",
+        "aqua",
+        "lofi",
+        "pastel",
+        "fantasy",
+        "wireframe",
+        "black",
+        "luxury",
+        "dracula",
+        "cmyk",
+        "autumn",
+        "business",
+        "acid",
+        "lemonade",
+        "night",
+        "coffee",
+        "winter",
+        "dim",
+        "nord",
+        "sunset",
+    ];
     return (
         <div>
             <header className="headerNav" style={navStyle}>
                 <input type="checkbox" name="" id="chk1" />
+                {/*Logo y nombre de la pagina*/}
                 <div className="logo cursor-pointer">
                     <div className="nav-logo">
                         <svg
@@ -59,14 +96,15 @@ export const NavBar2 = () => {
 
 
                 </div>
-
+                {/*barra de busqueda*/}
                 <div className="search-box">
                     <form action="">
                         <input type="text" name="search" placeholder="Buscar..." id="srch" />
                         <button type="submit"><CiSearch className="text-2xl text-white" /></button>
                     </form>
                 </div>
-
+                {/*lista de secciones de la pagina, ejemplo: Inicio. 
+                Incluye las redes solicales(visible en pantallas menores a 1000px) */}
                 <ul className="mx-12">
                     <li><a href="#">INICIO</a></li>
                     <li><a href="#">PRODUCTOS</a></li>
@@ -76,9 +114,8 @@ export const NavBar2 = () => {
                         <CiInstagram className="text-2xl text-white" />
                     </div>
                 </ul>
-
-
-                <div className="cart-theme gap-4 flex justify-center items-center lg:mr-12">
+                {/*contenedor de iconos de tema y carrito*/}
+                <div className="gap-4 flex justify-center items-center lg:mr-12">
 
                     <div className={`cart relative  cursor-pointer  ${animate ? 'animate' : ''}`}>
                         <CiShoppingCart className="text-2xl text-white " />
@@ -86,32 +123,36 @@ export const NavBar2 = () => {
                             <p className="text-sm font-extralight">10</p>
                         </i>
                     </div>
-                    <div className="dropdown dropdown-end">
+                    <div tabIndex={0} className="dropdown dropdown-end max-h-[calc(100vh-300px)]">
                         <TbColorSwatch tabIndex={0} role="button" className="text-2xl text-white" />
-                        <div tabIndex={0} className="rounded-lg dropdown-content w-52 bg-primary flex flex-col justify-start gap-2 p-2">
+                        <div
+                            tabIndex={0}
+                            className=" shadow-2xl mt-8 rounded-badge dropdown-content max-h-[calc(100vh-20rem)] md:max-h-[calc(100vh-10rem)] w-48 md:w-56 overflow-y-auto bg-primary flex flex-col gap-2 p-4"
+                        >
 
-                            <button className="p-2 outline-offset-4 flex justify-evenly items-center rounded-md bg-base-100">
-                                <p className="text-sm">
-                                    Light
-                                </p>
-                                <div className="flex h-full gap-1">
-                                    <span className="bg-primary rounded-badge w-2 text-primary">1</span>
-                                    <span className="bg-secondary rounded-badge w-2 text-secondary">2</span>
-                                    <span className="bg-accent rounded-badge w-2 text-accent">3</span>
-                                    <span className="bg-neutral rounded-badge w-2 text-neutral">4</span>
-                                </div>
-                            </button>
+                            {themes.map((theme, index) => (
+                                <button data-theme={theme} key={index} className="px-4 py-3 gap-2 outline-offset-4 flex justify-evenly items-center rounded-badge  bg-base-100">
+                                    <p data-theme={theme} className="flex-grow text-sm">{theme}</p>
+                                    <div className="flex h-full gap-1">
+                                        <span data-theme={theme} className="bg-primary rounded-badge w-2 text-primary">1</span>
+                                        <span data-theme={theme} className="bg-secondary rounded-badge w-2 text-secondary">2</span>
+                                        <span data-theme={theme} className="bg-accent rounded-badge w-2 text-accent">3</span>
+                                        <span data-theme={theme} className="bg-neutral rounded-badge w-2 text-neutral">1</span>
+                                    </div>
+                                </button>
+                            ))}
+
                         </div>
                     </div>
 
                 </div>
+                {/*icono de despliegue lateral del menu (visible en pantallas menores a 1000px)*/}
+                <label htmlFor="chk1" className="Menu">
+                    <FaBars className="text-2xl text-white" />
+                </label>
 
 
-                <div className="Menu">
-                    <label htmlFor="chk1">
-                        <i><FaBars className="text-2xl" /></i>
-                    </label>
-                </div>
+
             </header>
 
         </div>
