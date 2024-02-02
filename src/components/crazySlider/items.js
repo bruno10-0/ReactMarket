@@ -5,7 +5,7 @@ export const items = [
         "topic": "Air Max",
         "des": "Con una amortiguación Air Max de última generación y un diseño aerodinámico, estas zapatillas son la elección perfecta para corredores que buscan rendimiento y estilo en cada paso.",
         "desSmall": "Estilo y comodidad",
-        "img": "https://i.pinimg.com/originals/a6/b2/ee/a6b2eec05c9201dfb6b3b00994bb5e53.jpg"
+        "img": "https://cdn.samsung.com/etc/designs/smg/global/imgs/Social_Image_Samsung_Mobile_Smartphone_PCD_PF.jpg"
     },
     {
         "author": "Nike Air Max",
@@ -13,7 +13,7 @@ export const items = [
         "topic": "Air Max",
         "des": "Con una amortiguación Air Max de última generación y un diseño aerodinámico, estas zapatillas son la elección perfecta para corredores que buscan rendimiento y estilo en cada paso.",
         "desSmall": "Estilo y comodidad",
-        "img": "https://i.pinimg.com/originals/a6/b2/ee/a6b2eec05c9201dfb6b3b00994bb5e53.jpg"
+        "img": "https://cdn.samsung.com/etc/designs/smg/global/imgs/Social_Image_Samsung_Mobile_Smartphone_PCD_PF.jpg"
     },
     {
         "author": "Nike Air Max",
@@ -21,7 +21,7 @@ export const items = [
         "topic": "Air Max",
         "des": "Con una amortiguación Air Max de última generación y un diseño aerodinámico, estas zapatillas son la elección perfecta para corredores que buscan rendimiento y estilo en cada paso.",
         "desSmall": "Estilo y comodidad",
-        "img": "https://i.pinimg.com/originals/a6/b2/ee/a6b2eec05c9201dfb6b3b00994bb5e53.jpg"
+        "img": "https://cdn.samsung.com/etc/designs/smg/global/imgs/Social_Image_Samsung_Mobile_Smartphone_PCD_PF.jpg"
     },
     {
         "author": "Nike Air Max",
@@ -29,7 +29,7 @@ export const items = [
         "topic": "Air Max",
         "des": "Con una amortiguación Air Max de última generación y un diseño aerodinámico, estas zapatillas son la elección perfecta para corredores que buscan rendimiento y estilo en cada paso.",
         "desSmall": "Estilo y comodidad",
-        "img": "https://i.pinimg.com/originals/a6/b2/ee/a6b2eec05c9201dfb6b3b00994bb5e53.jpg"
+        "img": "https://cdn.samsung.com/etc/designs/smg/global/imgs/Social_Image_Samsung_Mobile_Smartphone_PCD_PF.jpg"
     },
     {
         "author": "Nike Air Max",
@@ -37,7 +37,7 @@ export const items = [
         "topic": "Air Max",
         "des": "Con una amortiguación Air Max de última generación y un diseño aerodinámico, estas zapatillas son la elección perfecta para corredores que buscan rendimiento y estilo en cada paso.",
         "desSmall": "Estilo y comodidad",
-        "img": "https://i.pinimg.com/originals/a6/b2/ee/a6b2eec05c9201dfb6b3b00994bb5e53.jpg"
+        "img": "https://cdn.samsung.com/etc/designs/smg/global/imgs/Social_Image_Samsung_Mobile_Smartphone_PCD_PF.jpg"
     }
 ];
 

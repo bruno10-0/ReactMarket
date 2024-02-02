@@ -12,9 +12,9 @@ export const CazySlider = () => {
     useEffect(() => {
         const nextBtn = document.getElementById('next');
         const prevBtn = document.getElementById('prev');
-        const carousel = document.querySelector('.carousel');
-        const listItem = document.querySelector('.carousel .list');
-        const thumbnail = document.querySelector('.carousel .thumbnail');
+        const Carousel = document.querySelector('.Carousel');
+        const listItem = document.querySelector('.Carousel .list');
+        const thumbnail = document.querySelector('.Carousel .thumbnail');
 
         nextBtn.onclick = function () {
             showSlider('next');
@@ -30,24 +30,24 @@ export const CazySlider = () => {
         let runAutoRun
 
         function showSlider(type) {
-            const itemSlider = document.querySelectorAll('.carousel .list .item');
-            const itemThumbnail = document.querySelectorAll('.carousel .thumbnail .item');
+            const itemSlider = document.querySelectorAll('.Carousel .list .item');
+            const itemThumbnail = document.querySelectorAll('.Carousel .thumbnail .item');
 
             if (type === 'next') {
                 listItem.appendChild(itemSlider[0]);
                 thumbnail.appendChild(itemThumbnail[0]);
-                carousel.classList.add('next');
+                Carousel.classList.add('next');
             } else {
                 let positionLastItem = itemSlider.length - 1;
                 listItem.prepend(itemSlider[positionLastItem]);
                 thumbnail.prepend(itemThumbnail[positionLastItem]);
-                carousel.classList.add('prev');
+                Carousel.classList.add('prev');
             }
 
             clearTimeout(runTimeOut);
             runTimeOut = setTimeout(() => {
-                carousel.classList.remove('next');
-                carousel.classList.remove('prev');
+                Carousel.classList.remove('next');
+                Carousel.classList.remove('prev');
                 setUserInteracted(false);
             }, timeRunning);
 
@@ -58,34 +58,34 @@ export const CazySlider = () => {
             runAutoRun = setTimeout(() => {
                 nextBtn.click();
             }, timeAutoNext);
-    
+
         }
 
-       
+
         return () => {
             clearTimeout(runTimeOut);
             clearTimeout(runAutoRun);
         };
     }, []);
 
-    //a partir de la array de objetos que recibimos para listaremos en el carousel, creamos una nueva con el orden modificado
+    //a partir de la array de objetos que recibimos para listaremos en el Carousel, creamos una nueva con el orden modificado
     const nuevoArray = reorganizarArray(items)
-    
+
     return (
         <>
-            <div className="carousel">
+            <div className="Carousel">
                 <div className="list">
                     {items.map((item, index) => (
                         <div key={index} className="item">
-                            <img src={item.img} alt={item.title} className="w-full"/>
+                            <img src={item.img} alt={item.title} className="w-full" />
                             <div className="content">
                                 <div className="author">{item.author}</div>
                                 <div className="title">{item.title}</div>
-                                <div className="topic">{item.topic}</div>
+                                <div className="topic text-primary">{item.topic}</div>
                                 <div className="des">{item.des}</div>
                                 <div className="buttons">
-                                    <button className="hover:scale-105 transition-transform duration-300 ease-in-out">DETALLES</button>
-                                    <button className="hover:scale-105 transition-transform duration-300 ease-in-out">AGREGAR</button>
+                                    <button className="btn bg-base-100 ">DETALLES</button>
+                                    <button className="btn bg-primary bg-opacity-50">AGREGAR</button>
                                 </div>
                             </div>
                         </div>
@@ -94,25 +94,25 @@ export const CazySlider = () => {
                 {/*thumbnail*/}
                 <div className="thumbnail">
                     {nuevoArray.map((item, index) => (
-                        <div key={index} className="item hover:scale-105 transition-transform duration-300 ease-in-out">
-                            <img src={item.img} alt={item.title} />
-                            <div className="content">
-                                <div className="title">{item.author}</div>
-                                <div className="des">{item.desSmall}</div>
+                        <div key={index} className="border-2 border-primary item hover:scale-95 transition-transform duration-300 ease-in-out">
+                            <img src={item.img} alt={item.title}/>
+                            <div className="w-full h-1/3 content absolute bg-base-100 bg-opacity-10 p-2" style={{ backdropFilter: 'blur(10px)' }}>
+                                <div className="title text-primary font-bold text">{item.author}</div>
+                                <div className="hidden md:block des text-accent text-sm">{item.desSmall}</div>
                             </div>
                         </div>
                     ))}
                 </div>
                 {/*arrows*/}
                 <div className="arrows">
-                    <button id="prev" className="flex justify-center items-center hover:scale-125 transition-transform duration-300 ease-in-out">
+                    <button id="prev" className="text-primary flex justify-center items-center hover:scale-95 transition-transform duration-300 ease-in-out">
                         <SlArrowLeft />
                     </button>
-                    <button id="next" className="flex justify-center items-center hover:scale-125 transition-transform duration-300 ease-in-out">
+                    <button id="next" className="text-primary flex justify-center items-center hover:scale-95 transition-transform duration-300 ease-in-out">
                         <SlArrowRight />
                     </button>
                 </div>
-                <div className="time"></div>
+                <div className="time bg-primary"></div>
             </div>
         </>
     )

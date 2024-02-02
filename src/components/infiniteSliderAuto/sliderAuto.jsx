@@ -2,7 +2,7 @@ import "./sliderAuto.css"
 export const SliderAuto = () => {
     return (
         <div>
-            <div className="logos-content">
+            <div className="logos-content bg-base-100 border border-y-primary">
                 <div className="logos-slide">
                     <img src="https://th.bing.com/th/id/R.5a54ed8571a62fb031d256087797c21b?rik=O81X%2fbvOUZuE2g&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2015%2f12%2fnike-logo-wallpapers-white-black.jpg&ehk=OS8whl5LL8mGvd2rrN9gSVQTttmuXNkqsxEUEoaQG84%3d&risl=&pid=ImgRaw&r=0"/>
                     <img src="https://www.pixelstalk.net/wp-content/uploads/2016/05/Best-Vans-Logo-Wallpapers-HD.jpg"/>

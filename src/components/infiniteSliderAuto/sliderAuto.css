@@ -4,12 +4,12 @@
     overflow: hidden;
     padding: 15px;
     top: 0;
-    background: black;
+    /* background: black; */
     position: relative;
     display: flex;
     z-index: 1;
-    border-top: 1px solid violet;
-    border-bottom: 1px solid violet;
+    /* border-top: 1px solid violet;
+    border-bottom: 1px solid violet; */
 }
 .logos-content:before,
 .logos-content:after{
@@ -30,8 +30,8 @@
    
 }
 .logos-slide img{
-height: 25px;
-padding-left:270px;
+    height: 25px;
+    padding-left:270px;
 }
 
 @media(max-width:1000px){
