@@ -2,17 +2,15 @@
     width: 100%;
     height: 70px;
     display: flex;
-    justify-content: space-between;
     position: fixed;
     z-index: 100;
     background: rgba(0,0,0,0.5);
     backdrop-filter: blur(2px);
     align-items: center;
     gap: 10px;
-    padding-right: 10px;
     transition: .5s ease-in-out;
-    z-index: 100;
     border: 1px solid violet;
+    padding: 10px;
 }
 #chk1{
     display: none;
@@ -22,9 +20,12 @@ i{
     cursor: pointer;
 }
 .headerNav .logo{
-    flex: 1;
+    display: flex;
+    justify-content: center;
     color: white;
-    margin-left: 50px;
+    gap: 10px;
+    margin-right: 48px;
+    margin-left: 60px;
 }
 .headerNav .search-box{
     flex: 1;
@@ -36,13 +37,13 @@ i{
     background-color: transparent;
     border: 1px solid white;
     backdrop-filter: blur(10px);
-    border-radius: 20px;
-    color: violet;
+    border-radius: 5px;
+    color: white;
     font-size: 16px;
-    text-align: center;
+    text-align: start;
     text-overflow: ellipsis;
-    padding-left: 15px;
-    padding-right: 45px;
+    padding-left: 20px;
+    padding-right: 50px;
 }
 .search-box button{
    width: 40px;
@@ -59,35 +60,53 @@ i{
    transform: scale(0.9);
 }
 .headerNav ul{
-    flex: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 10px;
+    gap: 20px;
 }
 .headerNav ul li a{
     text-decoration: none;
     color: white;
     font-weight: 680;
-    padding: 10px 15px;
     transition: transform 0.3s ease-in-out;
+ }
+ .headerNav ul li a:hover{
+    border-bottom: 1px solid white;
  }
 .headerNav ul li {
     display: flex;
     flex-direction: row;
 }
-.headerNav ul li a:hover{
-    transform: scale(1.2);
-    color: violet;
- }
- .headerNav .menu{
-    font-size: 2.5rem;
+ .headerNav .Menu{
     display: none;
  }
+ .dropdown-content{
+    list-style: none;
+    color: initial; /* Restablece el color de texto */
+    margin: initial; /* Restablece los márgenes */
+    padding: initial; /* Restablece el relleno */
+}
+
+
+
+
+
+
+
+
+ /*responsive*/   
  @media(max-width:1000px){
+    .headerNav .logo{
+        display: none;
+    }
     .search-box button{
         position: absolute;
     }
     .headerNav ul{
+        margin-left: 0px;
+        margin-right: 0px;
         position: fixed;
         top: 70px;
         right: -100%;
@@ -99,25 +118,23 @@ i{
         align-items: center;
         padding: 30px;
         transition: right 0.2s ease-in-out;
-        justify-content: space-around;
     }
-    .headerNav .menu{
-        display: flex;
-        width: 50px;
-        align-items: center;
-        justify-content: center;
-        
+    .headerNav .Menu{
+        display: flex; 
     }
     #chk1:checked ~ ul{
         right: 0;
     }
- }
+}
+
+
  @media(max-width:600px){
     .headerNav{
         transition: .2s ease-in-out;
     }
     .headerNav .logo{
         margin-left: 8px;
+        
     }
     .headerNav ul{
         width: 100%;
@@ -134,3 +151,21 @@ i{
         display: none;
     }
  }
+
+
+
+
+
+ /*animations*/
+ .cart {
+    transition: transform 1s ease;
+  }
+  .cart.animate {
+    transform: translateY(-5px) scale(1.1); /* Cambia esta cantidad según la altura deseada */
+    font-size: 10rem;
+    color: violet;
+  }  
+
+  .navbar{
+    z-index: 102;
+  }

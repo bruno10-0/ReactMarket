@@ -56,17 +56,18 @@
 }
 .carousel .list .item .content  button{
     border: none;
-    background-color: gray;
+    background-color: violet;
     letter-spacing: 3px;
     font-weight: 500;
     border-radius: 20px;
+    border: 1px solid white;
 
 }
 .carousel .list .item .content  button:nth-child(2){
     color: violet;
-    background: rgba(106, 103, 103, 0.5);
-    backdrop-filter: blur(10px);
-
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(2px);
+    border: 1px solid violet;
 }
 
 

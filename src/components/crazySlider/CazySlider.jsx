@@ -84,7 +84,7 @@ export const CazySlider = () => {
                                 <div className="topic">{item.topic}</div>
                                 <div className="des">{item.des}</div>
                                 <div className="buttons">
-                                    <button className="hover:scale-105 transition-transform duration-300 ease-in-out">VER</button>
+                                    <button className="hover:scale-105 transition-transform duration-300 ease-in-out">DETALLES</button>
                                     <button className="hover:scale-105 transition-transform duration-300 ease-in-out">AGREGAR</button>
                                 </div>
                             </div>
