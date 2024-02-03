@@ -135,8 +135,8 @@ export const NavBar = () => {
 
                     <div className={`cart relative  cursor-pointer  ${animate ? 'animate' : ''}`}>
                         <FiShoppingCart className="text-2xl" />
-                        <i className="flex items-center justify-center w-5 h-5 absolute -top-2 -right-3 rounded-full bg-primary text-base-100">
-                            <p className="text-sm font-mono">12</p>
+                        <i className="w-5 h-5 flex items-center justify-center absolute -top-2 -right-3 rounded-full bg-primary text-base-100">
+                            <p style={{ fontSize: '10px' }}>12</p>
                         </i>
                     </div>
                     <div tabIndex={0} className="dropdown dropdown-end max-h-[calc(100vh-300px)]">

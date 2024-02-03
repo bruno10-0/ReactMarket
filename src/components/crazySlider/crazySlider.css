@@ -1,12 +1,11 @@
 /*Carousel*/
 .Carousel{
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    height: 80vh;
     position: relative;
-    overflow: hidden;
     margin-top: 70px;
-
+    background: black;
+    overflow: hidden;
 }
 .Carousel .list .item{
     position: absolute;
@@ -18,16 +17,13 @@
     object-fit: cover;
 }
 .Carousel .list .item .content{
+    width: 100%;
     position: absolute;
-    top: 13%;
-    width: 1140px;
-    max-width: 80%;
-    left: 45%;
-    transform: translateX(-50%);
-    padding-right: 30%;
     box-sizing: border-box;
-    /* color: white; */
-    /* text-shadow: 0 5px 10px black */
+    top: 20px;
+    left:50px;
+    padding-right: 30%;
+    max-width: 60%;
 }
 .Carousel .list .item .content .author{
     font-weight: bold;
@@ -44,7 +40,6 @@
 }
 .Carousel .list .item .content .topic{
     font-size: 4rem;
-    /* color: violet; */
 }
 .Carousel .list .item .content .des{
     font-size: 1rem;
@@ -56,21 +51,8 @@
     gap: 5px;
     margin-top: 20px;
 }
-/* .Carousel .list .item .content  button{
-    border: none;
-    background-color: violet;
-    letter-spacing: 3px;
-    font-weight: 500;
-     border-radius: 20px; 
-    border: 1px solid white;
 
-} */
-/* .Carousel .list .item .content  button:nth-child(2){
-    color: violet;
-    background: rgba(0,0,0,0.8);
-    backdrop-filter: blur(2px);
-    border: 1px solid violet;
-} */
+
 
 
 
@@ -78,10 +60,10 @@
 /*thumbnail*/
 .thumbnail{
     position: absolute;
-    bottom: 50px;
-    left: 50%;
-    width: max-content;
-    z-index: 90;
+    bottom: 20px;
+    left: 65%;
+    width: 100%;
+    z-index: 80;
     display: flex;
     gap: 10px;
 }
@@ -90,61 +72,45 @@
     height: 220px;
     flex-shrink: 0;
     position: relative;
-    border-radius: 20px;
+    border-radius: 5px;
     display: flex;
 }
 .thumbnail .item img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px;
 }
 .thumbnail .item .content {
-    /* height: 100px;
-    width: 100%; */
     position: absolute;
     bottom: 0;
     display: flex;
     flex-direction: column;
     justify-items:center;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
 }
 
-/* .thumbnail .item .content .title{
-    font-weight: bold;
-    color: violet;
-}
-.thumbnail .item .content .des{
-    color: white;
-} */
+
+
+
 
 /*arrow*/
 .arrows{
     position: absolute;
-    top: 80%;
-    right: 72%;
-    width: 300px;
-    max-width: 30%;
+    top: 85%;
+    left:50px;
     display: flex;
     gap: 10px;
     align-items: center; 
 }
 .arrows button{
-    margin-right: 20px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border:none ;
-    /* color: violet; */
     font-size: large;
     transition: .5s;
-    z-index: 3;
-    /* border: 1px solid violet; */
-
 }
 .Carousel .list .item:nth-child(1){
-    z-index: 1;
+    z-index: 20;
 }
 .Carousel .list .item:nth-child(1) .author,
 .Carousel .list .item:nth-child(1) .title,
@@ -182,14 +148,15 @@
 
 
 
+
 /*effect next click*/
 .Carousel.next .list .item:nth-child(1) img{
     width: 150px;
     height: 220px;
     position: absolute;
-    left: 50%;
-    bottom: 50px;
-    border-radius: 20px;
+    left: 65%;
+    bottom: 20px;
+    border-radius: 5px;
     animation: showImage 0.5s linear 1 forwards;
 }
 @keyframes showImage{
@@ -224,9 +191,10 @@
 
 
 
+
 /*effect prev click*/
 .Carousel.prev .list .item:nth-child(2){
-    z-index: 2;
+    z-index: 30;
 }
 .Carousel.prev .list .item:nth-child(2) img{
     position: absolute;
@@ -238,9 +206,10 @@
     to{
         width: 150px;
         height: 220px;
-        border-radius: 20px;
-        left: 50%;
-        bottom: 50px;
+        border-radius: 5px;
+        left: 65%;
+        bottom: 20px;
+        z-index: 30;
     }
 }
 .Carousel.prev .thumbnail .item:nth-child(1){
@@ -271,15 +240,13 @@
 
 
 
+
 /*time*/
 .time{
     width: 0%;
-    height: 74px;
-
-    /* background-color: violet; */
+    height: 4px;
     position: absolute;
     z-index: 99;
-    top: -70px;
     left: 0;
 }
 .Carousel.next .time,
@@ -296,199 +263,283 @@
 
 
 
-/*responsive*/
-@media screen and (max-width:678px){
+
+@media (min-width: 280px) {
+    
+    .Carousel .list .item .content .author{
+        font-size: 8px;
+        letter-spacing: 6px;
+    }
+    .Carousel .list .item .content .title{
+        font-size: 16px;
+    }
+    .Carousel .list .item .content .topic{
+        font-size: 25px;
+    }
+    .Carousel .list .item .content .des{
+        font-size: 11px;
+    }
     .Carousel .list .item .content{
         padding-right: 0;
+        left: 20px;
     }
+    .Carousel .list .item .content .buttons{
+        display: flex;
+    }
+    .Carousel .list .item .content .buttons button{
+        height: 22px;
+        width: 60px;
+        font-size: 10px;
+        margin-top: 1px;
+        gap: 2px;
+    }
+    .Carousel .thumbnail{
+        bottom: 30px;
+        gap: 5px;
+        left: 68%;
+    }
+    .Carousel .thumbnail .item{
+        height: 140px;
+        width: 80px;
+    }
+    .Carousel .thumbnail .item .content .title{
+        font-size: 11px;
+        height: 30px;
+        font-weight: bold;
+    }
+    .Carousel .thumbnail .item .content .des{
+        display: none;
+    }
+    @keyframes outImage{
+        to{
+            width: 80px;
+            height: 140px;
+            left:68%;
+            bottom: 30px;
+        }
+    }
+    .Carousel.next .list .item:nth-child(1) img{
+        width: 80px;
+        height: 140px;
+        left: 68%;
+        bottom: 30px;
+        animation: showImage 0.5s linear 1 forwards;
+    }
+    @keyframes showThumbnail {
+        to {
+            width: 80px;
+        }
+    }
+    .Carousel .arrows{
+        bottom: 30px;
+        left: 30px;
+        height: 22px;
+        width: 100px;
+        justify-content: space-between;
+    }
+    .Carousel .arrows button {
+        font-size: 10px;          
+    }
+    .Carousel .Blur{
+        height: 110px;
+        z-index: 20;
+    }
+  }
+
+  
+@media (min-width: 640px) {
     .Carousel .list .item .content .author{
         font-size: 10px;
+        letter-spacing: 8px;
+    }
+    .Carousel .list .item .content .title{
+        font-size: 22px;
+    }
+    .Carousel .list .item .content .topic{
+        font-size: 35px;
+    }
+    .Carousel .list .item .content .des{
+        font-size: 12px;
+    }
+    .Carousel .list .item .content .buttons button{
+        height: 35px;
+        width: 80px;
+        font-size: 12px;
+    }
+    .Carousel .Blur{
+        height: 180px;
+        z-index: 20;
+    }
+}
+
+  /* Medianas pantallas (768px y más) */
+  @media (min-width: 768px) {
+    .Carousel .list .item .content .author{
+        font-size: 12px;
+        letter-spacing: 10px;
     }
     .Carousel .list .item .content .title{
         font-size: 25px;
     }
     .Carousel .list .item .content .topic{
-        font-size: 40px;
-    }
-    .arrows{
-        top: 82%;
-        right: 60%;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    .Carousel .list .item .content{
-        top: 20%;
-        max-width: 100%;
-        left: 55%;
-        padding-right: 5%;
+        font-size: 45px;
     }
     .Carousel .list .item .content .des{
-        font-size: 20px;
+        font-size: 14px;
     }
-    .arrows{
-        top: 82%;
-        right: 60%;
+    .Carousel .list .item .content .buttons button{
+        font-size: 12px;
+        margin-top: 10px;
     }
-}
-
-@media screen and (max-width:280px){
+    .Carousel .Blur{
+        height: 210px;
+        z-index: 20;
+      }
+  }
+  
+  /* Grandes pantallas (1024px y más) */
+  @media (min-width: 1024px) {
     .Carousel .list .item .content .author{
-        font-size: 10px;
+        font-size: 14px;
     }
     .Carousel .list .item .content .title{
-        font-size: 18px;
+        font-size: 25px;
     }
     .Carousel .list .item .content .topic{
-        font-size: 30px;
+        font-size: 35px;
     }
     .Carousel .list .item .content .des{
         font-size: 12px;
     }
-    .Carousel .list .item .content  button{
-        font-size: 10px;
+    .Carousel .list .item .content .buttons button{
+        height: 40px;
+        width: 120px;
+        font-size: 14px;
     }
-    .thumbnail .item{
-        width: 100px;
-        height: 170px;
+    .Carousel .thumbnail{
+        bottom: 30px;
+        gap: 5px;
+        left: 68%;
+    }
+    .Carousel .thumbnail .item{
+        height: 220px;
+        width: 120px;
+    }
+    .Carousel .thumbnail .item .content{
+        height: 80px;
+    }
+    .Carousel .thumbnail .item .content .title{
+        font-size: 12px;
+        height: 30px;
+        font-weight: bold;
+    }
+    .Carousel .thumbnail .item .content .des{
+        font-size: 10px;
+        display: block;
     }
     @keyframes outImage{
         to{
-            width: 100px;
-            height: 170px;
-            border-radius: 20px;
-            left: 60%;
-            bottom: 10px;
+            width: 120px;
+            height: 220px;
+            left:68%;
+            bottom: 30px;
         }
     }
-    .Carousel .thumbnail{
-        max-width: 100%;
-        left: 60%;
-        padding-right: 5%;
-        bottom: 10px;
+    .Carousel.next .list .item:nth-child(1) img{
+        width: 120px;
+        height: 220px;
+        left: 68%;
+        bottom: 30px;
+        animation: showImage 0.5s linear 1 forwards;
     }
     @keyframes showThumbnail {
         to {
-            width: 100px;
+            width: 120px;
         }
     }
-    .arrows button{
-        width: 30px;
-        height: 30px;
-    
+    .Carousel .arrows button {
+        font-size: 15px;          
     }
-}
+    .Carousel .Blur{
+        height: 300px;
+      }
+  }
 
-@media screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 600px) and (max-height: 600px) {
+
+  @media (min-width: 1280px) {
     .Carousel .list .item .content .author{
-        font-size: 18px;
+        font-size: 14px;
+        letter-spacing: 14px;
     }
     .Carousel .list .item .content .title{
         font-size: 30px;
     }
     .Carousel .list .item .content .topic{
-        font-size: 50px;
+        font-size: 45px;
     }
     .Carousel .list .item .content .des{
-        font-size: 20px;
+        font-size: 14px;
     }
-    .Carousel .list .item .content  button{
-        font-size: 15px;
-    }    
+    .Carousel .list .item .content .buttons button{
+        height: 40px;
+        width: 180px;
+        font-size: 13px;
+    }
     .Carousel .thumbnail{
-        bottom: 25px;
+        gap: 10px;
+        left: 55%;
+    }
+    .Carousel .thumbnail .item{
+        height: 260px;
+        width: 140px;
+    }
+    .Carousel .thumbnail .item .content{
+        height: 80px;
+    }
+    .Carousel .thumbnail .item .content .title{
+        font-size: 12px;
+        height: 30px;
+        font-weight: bold;
+    }
+    .Carousel .thumbnail .item .content .des{
+        font-size: 10px;
+        display: block;
     }
     @keyframes outImage{
         to{
-            width: 150px;
-            height: 220px;
-            border-radius: 20px;
-            left: 50%;
-            bottom: 25px;
+            width: 140px;
+            height: 260px;
+            left:55%;
+            bottom: 30px;
         }
     }
-    .arrows{
-        right: 65%;
-    }
-}
-@media screen and (min-width: 360px) and (max-width: 360px) and (min-height: 740px) and (max-height: 740px) {
-    .Carousel .list .item .content .author{
-        font-size: 10px;
-    }
-    .Carousel .list .item .content .title{
-        font-size: 20px;
-    }
-    .Carousel .list .item .content .topic{
-        font-size: 40px;
-    }
-    .Carousel .list .item .content .des{
-        font-size: 15px;
-    }
-    .Carousel .list .item .content  button{
-        font-size: 10px;
-    }    
-    .Carousel .thumbnail{
-        bottom: 10px;
-    }
-    @keyframes outImage{
-        to{
-            width: 150px;
-            height: 220px;
-            border-radius: 20px;
-            left: 50%;
-            bottom: 10px;
-            
-        }
+    .Carousel.next .list .item:nth-child(1) img{
+        width: 140px;
+        height: 260px;
+        left: 55%;
+        bottom: 30px;
+        animation: showImage 0.5s linear 1 forwards;
     }
     @keyframes showThumbnail {
         to {
-            width: 150px;
+            width: 140px;
         }
     }
-}
+    .Carousel .arrows button {
+        font-size: 18px;          
+    }
+    .Carousel .thumbnail .item .content{
+        height: 90px;
+    }
+    .Carousel .thumbnail .item .content .title{
+        font-size: 18px;
+    }
+    .Carousel .thumbnail .item .content .des{
+        font-size: 16px;
+    }
+    .Carousel .Blur{
+        height: 240px;
+      }
+  }
 
-@media screen and (min-width: 375px) and (max-width: 375px) and (min-height: 667px) and (max-height: 667px) {
-    .Carousel .list .item .content .author{
-        font-size: 10px;
-    }
-    .Carousel .list .item .content .title{
-        font-size: 20px;
-    }
-    .Carousel .list .item .content .topic{
-        font-size: 40px;
-    }
-    .Carousel .list .item .content .des{
-        font-size: 15px;
-    }
-    .Carousel .list .item .content  button{
-        font-size: 10px;
-    }    
-    .Carousel .thumbnail{
-        bottom: 10px;
-    }
-    .thumbnail .item{
-        width: 100px;
-        height: 170px;
-    }
-    .thumbnail .item{
-        width: 100px;
-        height: 170px;
-    }
-    @keyframes outImage{
-        to{
-            width: 100px;
-            height: 170px;
-            border-radius: 20px;
-            left: 50.1%;
-            bottom: 10px;
-            
-        }
-    }
-    @keyframes showThumbnail {
-        to {
-            width: 100px;
-        }
-    }
-}
-
-
+  

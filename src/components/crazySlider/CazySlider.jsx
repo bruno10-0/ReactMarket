@@ -73,10 +73,10 @@ export const CazySlider = () => {
 
     return (
         <>
-            <div className="Carousel">
+            <div className="Carousel mb-10">
                 <div className="list">
                     {items.map((item, index) => (
-                        <div key={index} className="item">
+                        <div key={index} className="item absolute">
                             <img src={item.img} alt={item.title} className="w-full" />
                             <div className="content">
                                 <div className="author">{item.author}</div>
@@ -84,8 +84,8 @@ export const CazySlider = () => {
                                 <div className="topic text-primary">{item.topic}</div>
                                 <div className="des">{item.des}</div>
                                 <div className="buttons">
-                                    <button className="btn bg-base-100 ">DETALLES</button>
-                                    <button className="btn bg-primary bg-opacity-50">AGREGAR</button>
+                                    <button className="rounded-badge bg-base-100" onClick={() => alert(`Soy el botón ${index}`)}>Detalles</button>
+                                    <button className="rounded-badge bg-primary bg-opacity-50">Agregar</button>
                                 </div>
                             </div>
                         </div>
@@ -94,25 +94,29 @@ export const CazySlider = () => {
                 {/*thumbnail*/}
                 <div className="thumbnail">
                     {nuevoArray.map((item, index) => (
-                        <div key={index} className="border-2 border-primary item hover:scale-95 transition-transform duration-300 ease-in-out">
-                            <img src={item.img} alt={item.title}/>
-                            <div className="w-full h-auto content absolute bg-base-100 bg-opacity-10 p-2" style={{ backdropFilter: 'blur(10px)' }}>
-                                <div className="title text-primary font-bold text">{item.author}</div>
-                                <div className="hidden md:block des text-accent text-sm">{item.desSmall}</div>
+                        <div key={index} className="item border-2 border-primary hover:scale-95 transition-transform duration-300 ease-in-out">
+                            <img src={item.img} alt={item.title} />
+                            <div className="content w-full h-auto  absolute bg-base-100 bg-opacity-10 p-2" style={{ backdropFilter: 'blur(10px)' }}>
+                                <div className="title text-primary">{item.author}</div>
+                                <div className="des text-accent">{item.desSmall}</div>
                             </div>
                         </div>
                     ))}
                 </div>
                 {/*arrows*/}
-                <div className="arrows">
-                    <button id="prev" className="text-primary flex justify-center items-center hover:scale-95 transition-transform duration-300 ease-in-out">
+                <div className="arrows z-30 ">
+                    <button id="prev" className="bg-base-300 text-primary rounded-badge flex justify-center items-center hover:scale-125 transition-transform duration-300 ease-in-out">
                         <SlArrowLeft />
                     </button>
-                    <button id="next" className="text-primary flex justify-center items-center hover:scale-95 transition-transform duration-300 ease-in-out">
+                    <button id="next" className="bg-base-300 text-primary rounded-badge flex justify-center items-center hover:scale-125 transition-transform duration-300 ease-in-out">
                         <SlArrowRight />
                     </button>
                 </div>
                 <div className="time bg-primary"></div>
+                <div className="Blur z-20 w-full absolute -bottom-2">
+                    <div className="w-full h-full bg-gradient-to-t from-base-100 to-transparent blur-sm"></div>
+                </div>
+
             </div>
         </>
     )
