@@ -3,13 +3,13 @@ import { FiShoppingCart } from "react-icons/fi";
 import { FaWhatsapp, FaBars } from "react-icons/fa";
 import { TbColorSwatch } from "react-icons/tb";
 import { useState, useEffect } from "react";
+import { useTheme } from "../../context/Context";
 import "./navBar.css"
 
-export const NavBar2 = () => {
+export const NavBar = () => {
     const [animate, setAnimate] = useState(false);
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
-
     //escucha los eventos del scroll, sirve para ainmar la subida y bajada del navBar
     useEffect(() => {
         const handleScroll = () => {
@@ -23,7 +23,7 @@ export const NavBar2 = () => {
     }, [prevScrollPos]);
     //define la altura a la que se desplazara hacia el top(arriba) el nav bar al hacer scroll hacia abajo
     const navStyle = {
-        top: visible ? "0" : "-70px",
+        top: visible ? "0px" : "0px",
     };
     // sirve para animar al icono de el carrito, al usuario cargar un item en el mismo este realizara una animacion
     useEffect(() => {
@@ -70,6 +70,22 @@ export const NavBar2 = () => {
         "nord",
         "sunset",
     ];
+
+    const { changeTheme } = useTheme();
+    
+    useEffect(() => {
+        const storedTheme = localStorage.getItem('reacMarketTheme');
+        if (storedTheme) {
+            changeTheme(storedTheme);
+        }
+    }, [changeTheme]);
+
+    const handleThemeChange = (newTheme) => {
+        changeTheme(newTheme);
+        localStorage.setItem('reacMarketTheme', newTheme);
+    };
+    
+
     return (
         <div>
             <header className="headerNav bg-base-100 border border-primary" style={navStyle}>
@@ -110,8 +126,8 @@ export const NavBar2 = () => {
                     <li><a href="#" className="text-sm transition-all hover:border-b-2 border-primary">Productos</a></li>
                     <li><a href="#" className="text-sm transition-all hover:border-b-2 border-primary">Blog</a></li>
                     <div className="items-center justify-evenly gap-10 flex lg:hidden">
-                        <FaWhatsapp className="text-2xl cursor-pointer"/>
-                        <CiInstagram className="text-2xl cursor-pointer"/>
+                        <FaWhatsapp className="text-2xl cursor-pointer" />
+                        <CiInstagram className="text-2xl cursor-pointer" />
                     </div>
                 </ul>
                 {/*contenedor de iconos de tema y carrito*/}
@@ -131,7 +147,12 @@ export const NavBar2 = () => {
                         >
 
                             {themes.map((theme, index) => (
-                                <button data-theme={theme} key={index} className="px-4 py-3 gap-2 outline-offset-4 flex justify-evenly items-center rounded-badge bg-base-100 hover:scale-105 ease-in-out duration-100">
+                                <button
+                                    data-theme={theme}
+                                    key={index}
+                                    className="px-4 py-3 gap-2 outline-offset-4 flex justify-evenly items-center rounded-badge bg-base-100 hover:scale-105 ease-in-out duration-100"
+                                    onClick={() => handleThemeChange(theme)}
+                                >
                                     <p data-theme={theme} className="flex-grow text-sm">{theme}</p>
                                     <div className="flex h-full gap-1">
                                         <span data-theme={theme} className="bg-primary rounded-badge w-2 text-primary">1</span>
@@ -150,11 +171,7 @@ export const NavBar2 = () => {
                 <label htmlFor="chk1" className="Menu">
                     <FaBars className="text-2xl" />
                 </label>
-
-
-
             </header>
-
         </div>
     )
 }
