@@ -2,6 +2,7 @@ import "./crazySlider.css";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { useEffect, useState } from "react";
 import { items, reorganizarArray } from "./items";
+import { SliderAuto } from "../infiniteSliderAuto/sliderAuto";
 
 export const CazySlider = () => {
   //este useEffect lo usamos para controlar los eventos al hacer click en el boton para cambiar de thumbnail
@@ -127,120 +128,240 @@ export const CazySlider = () => {
         <div className="time"></div>
       </div>
 
-      <div className="md:container md:mx-auto m-2">
-        <div
-          tabIndex={0}
-          className="collapse collapse-plus border border-base-300 bg-base-200 w-full
-          bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
-          "
-        >
-          <div className="collapse-title text-xl font-medium text-center ">
-            Zapatillas femeninas
+      <SliderAuto />
+
+      
+      <div className="md:container md:mx-auto m-2 grid grid-rows gap-0">
+        {/* <div className="collapse-title text-xl font-medium text-center ">
+          Zapatillas femeninas
+        </div> */}
+
+        <div className="sm:container sm:mx-auto md:container md:mx-auto 
+        lg:container lg:mx-auto xl:container xl:mx-auto m-2 grid grid-cols-1 
+        sm:grid-cols-2 md:grid-cols-3 gap-0">
+        
+        
+          <div className="card  bg-base-100 shadow-xl m-1 p-0 ">
+            <figure className="px-1 pt-1">
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+                className="rounded-xl  "
+              />
+            </figure>
+            <div
+              className="card-body items-center
+               text-center px-1 pt-1 m-0 h-min"
+            >
+              <h2 className="card-title px-1 pt-1">Nike</h2>
+              <h2 className="card-title px-1 pt-1">$ 60.000</h2>
+              <p className="text-xs	">
+                If a dog chews shoes whose shoes does he choose?
+              </p>
+              <div className="card-actions m-0">
+                <button className="btn text-xs bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 ">
+                  Comprar
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div className="collapse-content grid grid-cols-3 gap-0 ">
-
-
-            <div className="card  bg-base-100 shadow-xl m-1 p-0 ">
-
-              <figure className="px-1 pt-1">
-                <img
-                  src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                  alt="Shoes"
-                  className="rounded-xl  "
-                />
-              </figure>
-              <div className="card-body items-center
-               text-center px-1 pt-1 m-0 h-min">
-
-                <h2 className="card-title px-1 pt-1">Nike</h2>
-                <h2 className="card-title px-1 pt-1">$ 60.000</h2>
-                <p className="text-xs	">
-                  If a dog chews shoes whose shoes does he choose?
-                </p>
-                <div className="card-actions m-0">
-                  <button className="btn text-xs bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 ">Comprar</button>
-                </div>
+          <div className="card  bg-base-100 shadow-xl m-1">
+            <figure className="px-1 pt-1">
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+                className="rounded-xl"
+              />
+            </figure>
+            <div className="card-body items-center text-center px-1 pt-1 m-0">
+              <h2 className="card-title px-1 pt-1">Nike</h2>
+              <p className="text-xs	">
+                If a dog chews shoes whose shoes does he choose?
+              </p>
+              <div className="card-actions">
+                <button className="btn btn-primary ">Comprar</button>
               </div>
-            
-            
+              <h2 className="card-title px-1 pt-1">$ 60.000</h2>
             </div>
+          </div>
 
-            <div className="card  bg-base-100 shadow-xl m-1">
-              <figure className="px-1 pt-1">
-                <img
-                  src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                  alt="Shoes"
-                  className="rounded-xl"
-                />
-              </figure>
-              <div className="card-body items-center text-center px-1 pt-1 m-0">
-                <h2 className="card-title px-1 pt-1">Nike</h2>
-                <p className="text-xs	">
-                  If a dog chews shoes whose shoes does he choose?
-                </p>
-                <div className="card-actions">
-                  <button className="btn btn-primary ">Comprar</button>
-                </div>
-                <h2 className="card-title px-1 pt-1">$ 60.000</h2>
+          <div className="card  bg-base-100 shadow-xl  m-1">
+            <figure>
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">Adidas!!</h2>
+              <p> zapatillas para running</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Comprar</button>
               </div>
             </div>
+          </div>
 
-            <div className="card  bg-base-100 shadow-xl image- m-1">
-              <figure>
-                <img
-                  src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                  alt="Shoes"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">Adidas!!</h2>
-                <p> zapatillas para running</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Comprar</button>
-                </div>
+          <div className="card  bg-base-100 shadow-xl image-full m-1">
+            <figure>
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">Adidas!!</h2>
+              <p> zapatillas para running</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Comprar</button>
               </div>
             </div>
+          </div>
 
-            <div className="card  bg-base-100 shadow-xl image-full m-1">
-              <figure>
-                <img
-                  src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                  alt="Shoes"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">Adidas!!</h2>
-                <p> zapatillas para running</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Comprar</button>
-                </div>
+          <div className="card  bg-base-100 shadow-xl image-full m-1">
+            <figure>
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">Adidas!!</h2>
+              <p> zapatillas para running</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Comprar</button>
               </div>
             </div>
+          </div>
 
-            <div className="card  bg-base-100 shadow-xl image-full m-1">
-              <figure>
-                <img
-                  src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                  alt="Shoes"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">Adidas!!</h2>
-                <p> zapatillas para running</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Comprar</button>
-                </div>
+          <div className="card  bg-base-100 shadow-xl image-full m-1">
+            <figure>
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">Adidas!!</h2>
+              <p> zapatillas para running</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Comprar</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="card  bg-base-100 shadow-xl m-1 p-0 ">
+            <figure className="px-1 pt-1">
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+                className="rounded-xl  "
+              />
+            </figure>
+            <div
+              className="card-body items-center
+               text-center px-1 pt-1 m-0 h-min"
+            >
+              <h2 className="card-title px-1 pt-1">Nike</h2>
+              <h2 className="card-title px-1 pt-1">$ 60.000</h2>
+              <p className="text-xs	">
+                If a dog chews shoes whose shoes does he choose?
+              </p>
+              <div className="card-actions m-0">
+                <button className="btn text-xs bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 ">
+                  Comprar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="card  bg-base-100 shadow-xl m-1">
+            <figure className="px-1 pt-1">
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+                className="rounded-xl"
+              />
+            </figure>
+            <div className="card-body items-center text-center px-1 pt-1 m-0">
+              <h2 className="card-title px-1 pt-1">Nike</h2>
+              <p className="text-xs	">
+                If a dog chews shoes whose shoes does he choose?
+              </p>
+              <div className="card-actions">
+                <button className="btn btn-primary ">Comprar</button>
+              </div>
+              <h2 className="card-title px-1 pt-1">$ 60.000</h2>
+            </div>
+          </div>
+
+          <div className="card  bg-base-100 shadow-xl  m-1">
+            <figure>
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">Adidas!!</h2>
+              <p> zapatillas para running</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Comprar</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="card  bg-base-100 shadow-xl image-full m-1">
+            <figure>
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">Adidas!!</h2>
+              <p> zapatillas para running</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Comprar</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="card  bg-base-100 shadow-xl image-full m-1">
+            <figure>
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">Adidas!!</h2>
+              <p> zapatillas para running</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Comprar</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="card  bg-base-100 shadow-xl image-full m-1">
+            <figure>
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">Adidas!!</h2>
+              <p> zapatillas para running</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Comprar</button>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-
-
-
-      <div className="md:container md:mx-auto m-2">
+      {/* <div className="md:container md:mx-auto m-2">
         <div
           tabIndex={0}
           className="collapse collapse-plus border border-base-300 bg-base-200 w-full
@@ -252,8 +373,6 @@ export const CazySlider = () => {
           </div>
 
           <div className="collapse-content grid grid-cols-3 gap-1 ">
-
-
             <div className="card  bg-base-100 shadow-xl m-1">
               <figure className="px-1 pt-1">
                 <img
@@ -268,7 +387,9 @@ export const CazySlider = () => {
                   If a dog chews shoes whose shoes does he choose?
                 </p>
                 <div className="card-actions">
-                  <button className="btn  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 ">Comprar</button>
+                  <button className="btn  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 ">
+                    Comprar
+                  </button>
                 </div>
               </div>
             </div>
@@ -360,8 +481,7 @@ export const CazySlider = () => {
             </div>
           </div>
         </div>
-      </div>
-
+      </div> */}
     </>
   );
 };
