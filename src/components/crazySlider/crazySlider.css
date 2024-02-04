@@ -346,53 +346,127 @@
     }
   }
 
-  
-@media (min-width: 640px) {
+  /* Medianas pantallas (375px) */
+@media (min-width: 375px) {
     .Carousel .list .item .content .author{
-        font-size: 10px;
-        letter-spacing: 8px;
-    }
-    .Carousel .list .item .content .title{
-        font-size: 22px;
-    }
-    .Carousel .list .item .content .topic{
-        font-size: 35px;
-    }
-    .Carousel .list .item .content .des{
-        font-size: 12px;
-    }
-    .Carousel .list .item .content .buttons button{
-        height: 35px;
-        width: 80px;
-        font-size: 12px;
-    }
-    .Carousel .Blur{
-        height: 180px;
-        z-index: 20;
-    }
-}
-
-  /* Medianas pantallas (768px y más) */
-  @media (min-width: 768px) {
-    .Carousel .list .item .content .author{
-        font-size: 12px;
-        letter-spacing: 10px;
+        font-size: 14px;
     }
     .Carousel .list .item .content .title{
         font-size: 25px;
     }
     .Carousel .list .item .content .topic{
-        font-size: 45px;
+        font-size: 40px;
+    }
+    .Carousel .list .item .content .des{
+        font-size: 12px;
+    }
+    .Carousel .Blur{
+        height: 160px;
+    }
+}
+
+  /* Medianas pantallas (375px) y altura considerable */
+@media (min-width: 375px) and (min-height: 860px) {
+    .Carousel .list .item .content .author{
+        font-size: 16px;
+    }
+    .Carousel .list .item .content .title{
+        font-size: 30px;
+    }
+    .Carousel .list .item .content .topic{
+        font-size: 44px;
     }
     .Carousel .list .item .content .des{
         font-size: 14px;
     }
     .Carousel .list .item .content .buttons button{
-        font-size: 12px;
-        margin-top: 10px;
+        height: 38px;
+        width: 120px;
+        font-size: 16px;
+    }
+    .Carousel .thumbnail .item{
+        height: 220px;
+        width: 120px;
+    }
+    @keyframes outImage{
+        to{
+            width: 120px;
+            height: 220px;
+            left:68%;
+            bottom: 30px;
+        }
+    }
+    .Carousel.next .list .item:nth-child(1) img{
+        width: 120px;
+        height: 220px;
+        animation: showImage 0.5s linear 1 forwards;
+    }
+    @keyframes showThumbnail {
+        to {
+            width: 120px;
+        }
+      }
+      .Carousel .Blur{
+        height: 290px;
+    }
+}
+
+
+  /* Medianas pantallas (768px y más) */
+  @media (min-width: 668px) {
+    .Carousel .list .item .content .author{
+        font-size: 18px;
+        letter-spacing: 10px;
+    }
+    .Carousel .list .item .content .title{
+        font-size: 36px;
+    }
+    .Carousel .list .item .content .topic{
+        font-size: 60px;
+    }
+    .Carousel .list .item .content .des{
+        font-size: 18px;
+    }
+    .Carousel .list .item .content .buttons button{
+        font-size: 20px
+    }
+    .Carousel .thumbnail .item{
+        height: 320px;
+        width: 150px;
+    }
+    .Carousel .thumbnail .item .content{
+        height: 120px;
+    }
+    .Carousel .thumbnail .item .content .title{
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .Carousel .thumbnail .item .content .des{
+        font-size: 14px;
+        display: block;
+    }
+    @keyframes outImage{
+        to{
+            width: 150px;
+            height: 320px;
+            left:68%;
+            bottom: 30px;
+        }
+    }
+    .Carousel.next .list .item:nth-child(1) img{
+        width: 120px;
+        height: 320px;
+        left: 68%;
+        bottom: 30px;
+        animation: showImage 0.5s linear 1 forwards;
+    }
+    @keyframes showThumbnail {
+        to {
+            width: 150px;
+        }
     }
     .Carousel .Blur{
-        height: 210px;
+        height: 410px;
         z-index: 20;
       }
   }
