@@ -38,37 +38,7 @@ export const NavBar = () => {
     //lista de themas, nos ayudara a listar los botones para cambiar de tema
     const themes = [
         "light",
-        "dark",
-        "cupcake",
-        "bumblebee",
-        "emerald",
-        "corporate",
-        "synthwave",
-        "retro",
-        "cyberpunk",
-        "valentine",
-        "halloween",
-        "garden",
-        "forest",
-        "aqua",
         "lofi",
-        "pastel",
-        "fantasy",
-        "wireframe",
-        "black",
-        "luxury",
-        "dracula",
-        "cmyk",
-        "autumn",
-        "business",
-        "acid",
-        "lemonade",
-        "night",
-        "coffee",
-        "winter",
-        "dim",
-        "nord",
-        "sunset",
     ];
 
     const { changeTheme } = useTheme();
@@ -88,7 +58,7 @@ export const NavBar = () => {
 
     return (
         <div>
-            <header className="headerNav bg-base-100 border border-primary" style={navStyle}>
+            <header className="headerNav bg-base-100" style={navStyle}>
                 <input type="checkbox" name="" id="chk1" />
                 {/*Logo y nombre de la pagina*/}
                 <div className="logo cursor-pointer">
@@ -104,7 +74,7 @@ export const NavBar = () => {
 
                     <div className="flex items-center justify-between">
                         <h1>
-                            <span className="text-lg font-bold ">REACT</span>Market
+                            <span className="text-lg font-bold ">React</span>Market
                         </h1>
 
                         {/* <button className="bg-white rounded-2xl text-black p-2" onClick={() => setAnimate(true)}>animacion?</button> */}
@@ -131,7 +101,7 @@ export const NavBar = () => {
                     </div>
                 </ul>
                 {/*contenedor de iconos de tema y carrito*/}
-                <div className="gap-4 flex justify-center items-center lg:mr-12">
+                <div className="gap-4 flex justify-center items-center mx-4 lg:mr-12">
 
                     <div tabIndex={0} className={`cart relative cursor-pointer dropdown dropdown-end max-h-[calc(100vh-300px)]  ${animate ? 'animate' : ''}`}>
                         <FiShoppingCart tabIndex={0} role="button" className="text-2xl" />

@@ -94,8 +94,8 @@ export const CazySlider = () => {
                 {/*thumbnail*/}
                 <div className="thumbnail">
                     {nuevoArray.map((item, index) => (
-                        <div key={index} className="item border-2 hover:scale-95 transition-transform duration-300 ease-in-out">
-                            <img src={item.img} alt={item.title} />
+                        <div key={index} className="item rounded-xl overflow-hidden hover:scale-95 transition-transform duration-300 ease-in-out">
+                            <img src={item.img} alt={item.title}/>
                             <div className="content w-full h-auto  flex justify-around absolute bg-base-100 bg-opacity-10 p-2" style={{ backdropFilter: 'blur(10px)' }}>
                                 <div className="title text-primary">{item.author}</div>
                                 <div className="des text-accent">{item.desSmall}</div>

@@ -55,8 +55,6 @@
 
 
 
-
-
 /*thumbnail*/
 .thumbnail{
     position: absolute;
@@ -562,8 +560,7 @@
     .Carousel .thumbnail{
         gap: 10px;
         left: 55%;
-        gap:  2px;
-
+        gap: 6px;
     }
     .Carousel .thumbnail .item{
         height: 240px;
