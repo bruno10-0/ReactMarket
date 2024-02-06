@@ -81,7 +81,7 @@ export const CazySlider = () => {
                             <div className="content">
                                 <div className="author">{item.author}</div>
                                 <div className="title">{item.title}</div>
-                                <div className="topic text-primary">{item.topic}</div>
+                                <div className="topic text-primary uppercase">{item.topic}</div>
                                 <div className="des">{item.des}</div>
                                 <div className="buttons">
                                     <button className="rounded-badge bg-base-100" onClick={() => alert(`Soy el botón ${index}`)}>Detalles</button>
@@ -94,9 +94,9 @@ export const CazySlider = () => {
                 {/*thumbnail*/}
                 <div className="thumbnail">
                     {nuevoArray.map((item, index) => (
-                        <div key={index} className="item border-2 border-primary hover:scale-95 transition-transform duration-300 ease-in-out">
+                        <div key={index} className="item border-2 hover:scale-95 transition-transform duration-300 ease-in-out">
                             <img src={item.img} alt={item.title} />
-                            <div className="content w-full h-auto  absolute bg-base-100 bg-opacity-10 p-2" style={{ backdropFilter: 'blur(10px)' }}>
+                            <div className="content w-full h-auto  flex justify-around absolute bg-base-100 bg-opacity-10 p-2" style={{ backdropFilter: 'blur(10px)' }}>
                                 <div className="title text-primary">{item.author}</div>
                                 <div className="des text-accent">{item.desSmall}</div>
                             </div>

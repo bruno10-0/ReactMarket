@@ -72,7 +72,7 @@ export const NavBar = () => {
     ];
 
     const { changeTheme } = useTheme();
-    
+
     useEffect(() => {
         const storedTheme = localStorage.getItem('reacMarketTheme');
         if (storedTheme) {
@@ -84,7 +84,7 @@ export const NavBar = () => {
         changeTheme(newTheme);
         localStorage.setItem('reacMarketTheme', newTheme);
     };
-    
+
 
     return (
         <div>
@@ -104,7 +104,7 @@ export const NavBar = () => {
 
                     <div className="flex items-center justify-between">
                         <h1>
-                            <span className="text-lg font-bold ">React</span>Market
+                            <span className="text-lg font-bold ">REACT</span>Market
                         </h1>
 
                         {/* <button className="bg-white rounded-2xl text-black p-2" onClick={() => setAnimate(true)}>animacion?</button> */}
@@ -115,16 +115,16 @@ export const NavBar = () => {
                 {/*barra de busqueda*/}
                 <div className="search-box">
                     <form action="">
-                        <input className="text-sm border border-primary rounded-badge" type="text" name="search" placeholder="Buscar..." id="srch" />
+                        <input className="text-sm border rounded-badge" type="text" name="search" placeholder="BUSCAR..." id="srch" />
                         <button type="submit" className="bg-primary rounded-badge"><CiSearch className="text-2xl text-base-100" /></button>
                     </form>
                 </div>
                 {/*lista de secciones de la pagina, ejemplo: Inicio. 
                 Incluye las redes solicales(visible en pantallas menores a 1000px) */}
-                <ul className="mx-12 bg-base-100 py-40 lg:py-0">
-                    <li><a href="#" className="text-sm transition-all hover:border-b-2 border-primary">Inicio</a></li>
-                    <li><a href="#" className="text-sm transition-all hover:border-b-2 border-primary">Productos</a></li>
-                    <li><a href="#" className="text-sm transition-all hover:border-b-2 border-primary">Blog</a></li>
+                <ul className="mx-12 py-40 bg-base-100 lg:py-0">
+                    <li><a href="#" className="uppercase text-sm transition-all hover:border-b-2 border-primary">Inicio</a></li>
+                    <li><a href="#" className="uppercase text-sm transition-all hover:border-b-2 border-primary">Productos</a></li>
+                    <li><a href="#" className="uppercase text-sm transition-all hover:border-b-2 border-primary">Blog</a></li>
                     <div className="items-center justify-evenly gap-10 flex lg:hidden">
                         <FaWhatsapp className="text-2xl cursor-pointer" />
                         <CiInstagram className="text-2xl cursor-pointer" />
@@ -133,11 +133,25 @@ export const NavBar = () => {
                 {/*contenedor de iconos de tema y carrito*/}
                 <div className="gap-4 flex justify-center items-center lg:mr-12">
 
-                    <div className={`cart relative  cursor-pointer  ${animate ? 'animate' : ''}`}>
-                        <FiShoppingCart className="text-2xl" />
+                    <div tabIndex={0} className={`cart relative cursor-pointer dropdown dropdown-end max-h-[calc(100vh-300px)]  ${animate ? 'animate' : ''}`}>
+                        <FiShoppingCart tabIndex={0} role="button" className="text-2xl" />
                         <i className="w-5 h-5 flex items-center justify-center absolute -top-2 -right-3 rounded-full bg-primary text-base-100">
-                            <p style={{ fontSize: '10px' }}>12</p>
+                            <p style={{ letterSpacing: "0px", fontFamily: "sans-serif", fontSize: '10px' }}>12</p>
                         </i>
+                        <div
+                            tabIndex={0}
+                            className=" shadow-2xl mt-8 rounded-badge dropdown-content  h-[calc(100vh-8rem)] w-72 overflow-y-auto bg-base-100 flex flex-col gap-2 p-4 text-primary"
+                        >
+                            <h1 className="uppercase py-2 font-bold">
+                                Carrito
+                            </h1>
+                            <h2 className="border-y py-2" style={{ letterSpacing: "0px", fontSize: '12px' }}>
+                                Gasta $5.000 más y obtén envío gratis! (SOLO DISPONIBLE PARA PEDIDOS DE POSADAS)
+                            </h2>
+                            <div className="flex justify-start items-center">
+                                Tu carrito está vacio
+                            </div>
+                        </div>
                     </div>
                     <div tabIndex={0} className="dropdown dropdown-end max-h-[calc(100vh-300px)]">
                         <TbColorSwatch tabIndex={0} role="button" className="text-2xl" />

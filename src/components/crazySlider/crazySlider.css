@@ -1,7 +1,7 @@
 /*Carousel*/
 .Carousel{
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     position: relative;
     margin-top: 70px;
     background: black;
@@ -562,34 +562,33 @@
     .Carousel .thumbnail{
         gap: 10px;
         left: 55%;
+        gap:  2px;
+
     }
     .Carousel .thumbnail .item{
-        height: 260px;
+        height: 240px;
         width: 140px;
     }
     .Carousel .thumbnail .item .content{
-        height: 80px;
+        height: 90px;
     }
     .Carousel .thumbnail .item .content .title{
-        font-size: 12px;
-        height: 30px;
-        font-weight: bold;
+        font-size: 13px;
     }
     .Carousel .thumbnail .item .content .des{
-        font-size: 10px;
-        display: block;
+        font-size: 12px;
     }
     @keyframes outImage{
         to{
             width: 140px;
-            height: 260px;
+            height: 240px;
             left:55%;
             bottom: 30px;
         }
     }
     .Carousel.next .list .item:nth-child(1) img{
         width: 140px;
-        height: 260px;
+        height: 240px;
         left: 55%;
         bottom: 30px;
         animation: showImage 0.5s linear 1 forwards;
@@ -601,15 +600,6 @@
     }
     .Carousel .arrows button {
         font-size: 18px;          
-    }
-    .Carousel .thumbnail .item .content{
-        height: 90px;
-    }
-    .Carousel .thumbnail .item .content .title{
-        font-size: 18px;
-    }
-    .Carousel .thumbnail .item .content .des{
-        font-size: 16px;
     }
     .Carousel .Blur{
         height: 240px;
