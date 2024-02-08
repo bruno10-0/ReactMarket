@@ -43,8 +43,8 @@ export const Carousel = () => {
           </div>
 
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" className="hover:scale-125 transition-transform duration-300 ease-in-out">❮</a>
-            <a href="#slide2" className="hover:scale-125 transition-transform duration-300 ease-in-out">❯</a>
+            <a href="#slide4" className="btn bg-primary text-base-100 hover:scale-105 transition-transform duration-300 ease-in-out">❮</a>
+            <a href="#slide2" className="btn bg-primary text-base-100 hover:scale-105 transition-transform duration-300 ease-in-out">❯</a>
           </div>
         </div>
       </div>

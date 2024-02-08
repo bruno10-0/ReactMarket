@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom'; // Importa Link desde React Router
 
-export const Card = ({product}) => {
-
+export const Card = ({ product }) => {
   return (
-    <div className="bg-base100 shadow-lg p-2">
+    <Link to="/a" className="bg-base100 shadow-lg p-2 cursor-pointer" style={{ textDecoration: 'none' }}>
       <div className="flex justify-center items-center" style={{ height: "220px", flexShrink: "0" }}>
-  <img src={product.image} alt={product.name} className="max-w-full max-h-full object-contain object-center" />
-</div>
+        <img src={product.image} alt={product.name} className="max-w-full max-h-full object-contain object-center" />
+      </div>
 
       <div className='flex flex-col items-center justify-center gap-2 p-2'>
         <h1 style={{ letterSpacing: "2px", fontSize: "15px" }}>
@@ -19,8 +19,6 @@ export const Card = ({product}) => {
           {product.price}
         </h3>
       </div>
-    </div>
+    </Link>
   );
 };
-
-

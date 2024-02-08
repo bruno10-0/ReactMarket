@@ -1,16 +1,17 @@
-import { CazySlider } from './components/crazySlider/CazySlider'
-import { NavBar } from './components/navBar/navBar'
-import { SliderAuto } from './components/infiniteSliderAuto/sliderAuto'
-import { Carousel } from './components/carousel/Carousel'
+import { Inicio } from "./pages/inicio"
+import { DetailProduct } from "./components/detailProduct/detailProduct";
+import { NotFound } from "./pages/notFound";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
 
   return (
-    <>
-        <NavBar />
-        <CazySlider />
-        <Carousel />
-        <SliderAuto />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/a" element={<DetailProduct />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   )
 }
 

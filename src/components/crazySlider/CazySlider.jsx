@@ -2,8 +2,8 @@ import "./crazySlider.css"
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { useEffect, useState } from "react";
 import { items, reorganizarArray } from "./items";
-
-export const CazySlider = () => {
+import { Link } from 'react-router-dom';
+export const CrazySlider = () => {
 
     //este useEffect lo usamos para controlar los eventos al hacer click en el boton para cambiar de thumbnail 
     // eslint-disable-next-line no-unused-vars
@@ -94,15 +94,16 @@ export const CazySlider = () => {
                 {/*thumbnail*/}
                 <div className="thumbnail">
                     {nuevoArray.map((item, index) => (
-                        <div key={index} className="item rounded-xl overflow-hidden hover:scale-95 transition-transform duration-300 ease-in-out">
-                            <img src={item.img} alt={item.title}/>
+                        <Link to="/a" key={index} className="item rounded-xl overflow-hidden hover:scale-95 transition-transform duration-300 ease-in-out">
+                            <img src={item.img} alt={item.title} />
                             <div className="content w-full h-auto  flex justify-around absolute bg-base-100 bg-opacity-10 p-2" style={{ backdropFilter: 'blur(10px)' }}>
                                 <div className="title text-primary">{item.author}</div>
                                 <div className="des text-accent">{item.desSmall}</div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
+
                 {/*arrows*/}
                 <div className="arrows z-30 ">
                     <button id="prev" className="bg-base-300 text-primary rounded-badge flex justify-center items-center hover:scale-125 transition-transform duration-300 ease-in-out">

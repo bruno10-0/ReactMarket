@@ -4,6 +4,7 @@ import { FaWhatsapp, FaBars } from "react-icons/fa";
 import { TbColorSwatch } from "react-icons/tb";
 import { useState, useEffect } from "react";
 import { useTheme } from "../../context/Context";
+import { Link } from 'react-router-dom';
 import "./navBar.css"
 
 export const NavBar = () => {
@@ -62,21 +63,23 @@ export const NavBar = () => {
                 <input type="checkbox" name="" id="chk1" />
                 {/*Logo y nombre de la pagina*/}
                 <div className="logo cursor-pointer">
-                    <div className="nav-logo">
-                        <svg
-                            width="30"
-                            height="30"
-                            viewBox="0 0 76 65"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" className="fill-primary" />
-                        </svg>
-                    </div>
-
+                    <Link to="/">
+                        <div className="nav-logo">
+                            <svg
+                                width="30"
+                                height="30"
+                                viewBox="0 0 76 65"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" className="fill-primary" />
+                            </svg>
+                        </div>
+                    </Link>
                     <div className="flex items-center justify-between">
-                        <h1>
-                            <span className="text-lg font-bold ">React</span>Market
-                        </h1>
-
+                        <Link to="/">
+                            <h1>
+                                <span className="text-lg font-bold ">React</span>Market
+                            </h1>
+                        </Link>
                         {/* <button className="bg-white rounded-2xl text-black p-2" onClick={() => setAnimate(true)}>animacion?</button> */}
                     </div>
 
@@ -92,9 +95,9 @@ export const NavBar = () => {
                 {/*lista de secciones de la pagina, ejemplo: Inicio. 
                 Incluye las redes solicales(visible en pantallas menores a 1000px) */}
                 <ul className="mx-12 py-40 bg-base-100 lg:py-0">
-                    <li><a href="#" className="uppercase text-sm transition-all hover:border-b-2 border-primary">Inicio</a></li>
-                    <li><a href="#" className="uppercase text-sm transition-all hover:border-b-2 border-primary">Productos</a></li>
-                    <li><a href="#" className="uppercase text-sm transition-all hover:border-b-2 border-primary">Blog</a></li>
+                    <li><Link to="/" className="uppercase text-sm transition-all hover:border-b-2 border-primary">Inicio</Link></li>
+                    <li><Link to="/productos" className="uppercase text-sm transition-all hover:border-b-2 border-primary">Productos</Link></li>
+                    <li><Link to="/servicios" className="uppercase text-sm transition-all hover:border-b-2 border-primary">Servicios</Link></li>
                     <div className="items-center justify-evenly gap-10 flex lg:hidden">
                         <FaWhatsapp className="text-2xl cursor-pointer" />
                         <CiInstagram className="text-2xl cursor-pointer" />
