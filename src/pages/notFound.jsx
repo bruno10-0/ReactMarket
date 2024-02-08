@@ -1,11 +1,11 @@
 import { NavBar } from "../components/navBar/navBar";
 import { Link } from "react-router-dom";
-
+import { Footer } from "../components/footer/footer";
 export const NotFound = () => {
     return (
         <div>
             <NavBar />
-            <div className="bg-base-300 w-full h-screen flex flex-col justify-center items-center gap-4">
+            <div className="bg-base-300 w-full h-screen flex flex-col justify-center text-center items-center gap-4">
                 <h1>404</h1>
                 <h2 style={{ letterSpacing: "1px" }}>La página que estás buscando no se encontró</h2>
                 <Link to="/">
@@ -15,6 +15,7 @@ export const NotFound = () => {
                     <p>Es posible que la página no exista, esté en mantenimiento o se encuentre en proceso de mejoras. Por favor, inténtalo nuevamente más tarde.</p>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

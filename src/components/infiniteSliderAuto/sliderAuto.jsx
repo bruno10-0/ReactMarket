@@ -10,7 +10,6 @@ export const SliderAuto = () => {
                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Huawei_logo_icon_170010.png"/>
                     <img src="https://pngimg.com/d/google_PNG19624.png"/>
                     <img src="https://logolook.net/wp-content/uploads/2022/12/OnePlus-Symbol.png"/>
-                    <img src="https://assets.stickpng.com/images/5848286acef1014c0b5e49e6.png"/>
                     <img src="https://thumbs.dreamstime.com/b/lenovo-logo-vector-format-available-illustrator-ai-149074793.jpg"/>
                 </div>
                 <div className="logos-slide">
@@ -20,7 +19,6 @@ export const SliderAuto = () => {
                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Huawei_logo_icon_170010.png"/>
                     <img src="https://pngimg.com/d/google_PNG19624.png"/>
                     <img src="https://logolook.net/wp-content/uploads/2022/12/OnePlus-Symbol.png"/>
-                    <img src="https://assets.stickpng.com/images/5848286acef1014c0b5e49e6.png"/>
                     <img src="https://thumbs.dreamstime.com/b/lenovo-logo-vector-format-available-illustrator-ai-149074793.jpg"/>
                 </div>
             </div>

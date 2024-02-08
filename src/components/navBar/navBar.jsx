@@ -105,27 +105,6 @@ export const NavBar = () => {
                 </ul>
                 {/*contenedor de iconos de tema y carrito*/}
                 <div className="gap-4 flex justify-center items-center mx-4 lg:mr-12">
-
-                    <div tabIndex={0} className={`cart relative cursor-pointer dropdown dropdown-end max-h-[calc(100vh-300px)]  ${animate ? 'animate' : ''}`}>
-                        <FiShoppingCart tabIndex={0} role="button" className="text-2xl" />
-                        <i className="w-5 h-5 flex items-center justify-center absolute -top-2 -right-3 rounded-full bg-primary text-base-100">
-                            <p style={{ letterSpacing: "0px", fontFamily: "sans-serif", fontSize: '10px' }}>12</p>
-                        </i>
-                        <div
-                            tabIndex={0}
-                            className=" shadow-2xl mt-8 rounded-badge dropdown-content  h-[calc(100vh-8rem)] w-72 overflow-y-auto bg-base-100 flex flex-col gap-2 p-4 text-primary"
-                        >
-                            <h1 className="uppercase py-2 font-bold">
-                                Carrito
-                            </h1>
-                            <h2 className="border-y py-2" style={{ letterSpacing: "0px", fontSize: '12px' }}>
-                                Gasta $5.000 más y obtén envío gratis! (SOLO DISPONIBLE PARA PEDIDOS DE POSADAS)
-                            </h2>
-                            <div className="flex justify-start items-center">
-                                Tu carrito está vacio
-                            </div>
-                        </div>
-                    </div>
                     <div tabIndex={0} className="dropdown dropdown-end max-h-[calc(100vh-300px)]">
                         <TbColorSwatch tabIndex={0} role="button" className="text-2xl" />
                         <div
@@ -149,10 +128,28 @@ export const NavBar = () => {
                                     </div>
                                 </button>
                             ))}
-
                         </div>
                     </div>
-
+                    <div tabIndex={0} className={`cart relative cursor-pointer dropdown dropdown-end max-h-[calc(100vh-300px)]  ${animate ? 'animate' : ''}`}>
+                        <FiShoppingCart tabIndex={0} role="button" className="text-2xl" />
+                        <i className="w-5 h-5 flex items-center justify-center absolute -top-2 -right-3 rounded-full bg-primary text-base-100">
+                            <p style={{ letterSpacing: "0px", fontFamily: "sans-serif", fontSize: '10px' }}>12</p>
+                        </i>
+                        <div
+                            tabIndex={0}
+                            className=" shadow-2xl mt-8 rounded-badge dropdown-content  h-[calc(100vh-8rem)] w-72 overflow-y-auto bg-base-100 flex flex-col gap-2 p-4 text-primary"
+                        >
+                            <h1 className="uppercase py-2 font-bold">
+                                Carrito
+                            </h1>
+                            <h2 className="border-y py-2" style={{ letterSpacing: "0px", fontSize: '12px' }}>
+                                Gasta $5.000 más y obtén envío gratis! (SOLO DISPONIBLE PARA PEDIDOS DE POSADAS)
+                            </h2>
+                            <div className="flex justify-start items-center">
+                                Tu carrito está vacio
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 {/*icono de despliegue lateral del menu (visible en pantallas menores a 1000px)*/}
                 <label htmlFor="chk1" className="Menu">

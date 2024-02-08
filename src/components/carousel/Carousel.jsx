@@ -49,7 +49,7 @@ export const Carousel = () => {
         </div>
       </div>
       <div className="w-full flex justify-center items-start my-2">
-        <button className="btn uppercase bg-primary text-base-100 font-normal  text-sm md:textarea-md lg:text-lg">
+        <button className="btn uppercase bg-primary text-base-100 font-normal  text-sm md:textarea-md">
           Ver todos 
         </button>
       </div>
