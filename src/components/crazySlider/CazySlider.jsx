@@ -1,5 +1,4 @@
 import "./crazySlider.css"
-import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { useEffect, useState } from "react";
 import { items, reorganizarArray } from "./items";
 import { Link } from 'react-router-dom';
@@ -106,11 +105,11 @@ export const CrazySlider = () => {
 
                 {/*arrows*/}
                 <div className="arrows z-30 ">
-                    <button id="prev" className="bg-base-300 text-primary rounded-badge flex justify-center items-center hover:scale-125 transition-transform duration-300 ease-in-out">
-                        <SlArrowLeft />
+                    <button id="prev" className="btn-circle flex justify-center items-center bg-base-200 text-primary hover:scale-105 transition-transform duration-300 ease-in-out">
+                        ❮
                     </button>
-                    <button id="next" className="bg-base-300 text-primary rounded-badge flex justify-center items-center hover:scale-125 transition-transform duration-300 ease-in-out">
-                        <SlArrowRight />
+                    <button id="next" className="btn-circle flex justify-center items-center bg-base-200 text-primary hover:scale-105 transition-transform duration-300 ease-in-out">
+                        ❯
                     </button>
                 </div>
                 <div className="time bg-primary"></div>

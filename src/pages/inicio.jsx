@@ -8,7 +8,7 @@ export const Inicio = () => {
         <div>
             <NavBar />
             <CrazySlider />
-            <Carousel />
+            <Carousel to={"/productos"}/>
             <SliderAuto />
             <Footer/>
         </div>

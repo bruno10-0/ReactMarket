@@ -38,9 +38,8 @@ export const NavBar = () => {
     }, [animate]);
     //lista de themas, nos ayudara a listar los botones para cambiar de tema
     const themes = [
-        "light",
         "lofi",
-    ];
+      ];
 
     const { changeTheme } = useTheme();
 
@@ -95,7 +94,7 @@ export const NavBar = () => {
                 {/*lista de secciones de la pagina, ejemplo: Inicio. 
                 Incluye las redes solicales(visible en pantallas menores a 1000px) */}
                 <ul className="mx-12 py-40 bg-base-100 lg:py-0">
-                    <li><Link to="/" className="uppercase text-sm transition-all hover:border-b-2 border-primary">Inicio</Link></li>
+                    <li><Link to="/" className="lg:hidden uppercase text-sm transition-all hover:border-b-2 border-primary">Inicio</Link></li>
                     <li><Link to="/productos" className="uppercase text-sm transition-all hover:border-b-2 border-primary">Productos</Link></li>
                     <li><Link to="/servicios" className="uppercase text-sm transition-all hover:border-b-2 border-primary">Servicios</Link></li>
                     <div className="items-center justify-evenly gap-10 flex lg:hidden">

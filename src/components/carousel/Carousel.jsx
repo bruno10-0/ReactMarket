@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { Card } from "../card/Card";
-
-export const Carousel = () => {
+import { Link } from "react-router-dom";
+export const Carousel = ({to}) => {
   const products = [
     {
       id: 1,
@@ -43,14 +44,14 @@ export const Carousel = () => {
           </div>
 
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" className="btn bg-primary text-base-100 hover:scale-105 transition-transform duration-300 ease-in-out">❮</a>
-            <a href="#slide2" className="btn bg-primary text-base-100 hover:scale-105 transition-transform duration-300 ease-in-out">❯</a>
+            <a href="#slide4" className="btn-circle flex justify-center items-center bg-base-200 text-primary hover:scale-105 transition-transform duration-300 ease-in-out">❮</a>
+            <a href="#slide2" className="btn-circle flex justify-center items-center bg-base-200 text-primary hover:scale-105 transition-transform duration-300 ease-in-out">❯</a>
           </div>
         </div>
       </div>
-      <div className="w-full flex justify-center items-start my-2">
-        <button className="btn uppercase bg-primary text-base-100 font-normal  text-sm md:textarea-md">
-          Ver todos 
+      <div className="w-full flex justify-center items-start my-4">
+        <button className="btn uppercase bg-base-200 text-primary font-normal text-sm shadow-md">
+         <Link to={to} >Ver todos</Link>
         </button>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { FaWhatsapp } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
-
+import { Link } from "react-router-dom";
 export const Footer = () => {
     return (
         <div>
@@ -22,13 +22,15 @@ export const Footer = () => {
                     <h6 className="footer-title">ReactMarket</h6>
                     <a className="link link-hover">Acerca de nosotros</a>
                     <a className="link link-hover">Contáctenos</a>
-                    <a className="link link-hover">Tienda</a>
+                    <a className="link link-hover">
+                        <Link to="/productos">Tienda</Link>
+                    </a>
                 </nav>
                 <nav>
                     <h6 className="footer-title">Social</h6>
                     <div className="grid grid-flow-col gap-4">
-                        <a><FaWhatsapp className="cursor-pointer text-2xl"/></a>
-                        <a><CiInstagram className="cursor-pointer text-2xl"/></a>
+                        <a><FaWhatsapp className="cursor-pointer text-2xl" /></a>
+                        <a><CiInstagram className="cursor-pointer text-2xl" /></a>
                     </div>
                 </nav>
             </footer>
