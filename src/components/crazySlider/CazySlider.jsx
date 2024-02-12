@@ -28,7 +28,7 @@ export const CrazySlider = () => {
     }, [index]);
 
     return (
-        <div className="mt-16 mb-32 relative w-full h-auto" style={{ height: "60vh" }}>
+        <div className="mt-16 mb-48 relative w-full h-auto" style={{ height: "60vh" }}>
             <div className="absolute inset-0 flex justify-center items-center">
                 <img
                     src={images[index]}

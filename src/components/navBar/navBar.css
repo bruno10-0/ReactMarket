@@ -80,7 +80,12 @@ i{
 
 
 
- /*responsive*/   
+ /*responsive*/  
+ @media screen and (min-width: 1000px) and (max-width: 1030px) {
+    .headerNav ul{
+        padding: 0px;
+    }
+ }
  @media(max-width:1000px){
     .headerNav .logo{
         display: none;
