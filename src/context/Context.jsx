@@ -4,16 +4,16 @@ import { createContext, useContext, useState, useEffect } from 'react';
 const ThemeContext = createContext();
 
 export const Context = ({ children }) => {
-  const [theme, setTheme] = useState( document.documentElement.setAttribute("data-theme",(localStorage.getItem('reacMarketTheme') || 'light')));
+  const [theme, setTheme] = useState( document.documentElement.setAttribute("data-theme",(localStorage.getItem('reactMarketTheme') || 'light')));
 
   // Función para cambiar el tema y guardar en localStorage
   const changeTheme = (newTheme) => {
     setTheme(newTheme);
-    localStorage.setItem('reacMarketTheme', newTheme);
+    localStorage.setItem('reactMarketTheme', newTheme);
   };
 
   useEffect(() => {
-    const storedTheme = localStorage.getItem('reacMarketTheme');
+    const storedTheme = localStorage.getItem('reactMarketTheme');
     if (storedTheme) {
       setTheme(storedTheme);
     }

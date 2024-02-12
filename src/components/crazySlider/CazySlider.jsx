@@ -1,123 +1,56 @@
-import "./crazySlider.css"
-import { useEffect, useState } from "react";
-import { items, reorganizarArray } from "./items";
-import { Link } from 'react-router-dom';
-export const CrazySlider = () => {
+import { useState, useEffect } from 'react';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-    //este useEffect lo usamos para controlar los eventos al hacer click en el boton para cambiar de thumbnail 
-    // eslint-disable-next-line no-unused-vars
-    const [userInteracted, setUserInteracted] = useState(false);
+export const CrazySlider = () => {
+    const images = [
+        "https://http2.mlstatic.com/D_NQ_985793-MLA74254028956_022024-OO.webp",
+        "https://http2.mlstatic.com/D_NQ_852724-MLA74255608290_022024-OO.webp",
+        "https://http2.mlstatic.com/D_NQ_682765-MLA74423187481_022024-OO.webp",
+        "https://http2.mlstatic.com/D_NQ_863799-MLA74214799536_012024-OO.webp",
+        "https://http2.mlstatic.com/D_NQ_958811-MLA74322072658_022024-OO.webp"
+    ];
+    const [index, setIndex] = useState(0);
+
+    const nextSlide = () => {
+        setIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+    };
+
+    const prevSlide = () => {
+        setIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+    };
 
     useEffect(() => {
-        const nextBtn = document.getElementById('next');
-        const prevBtn = document.getElementById('prev');
-        const Carousel = document.querySelector('.Carousel');
-        const listItem = document.querySelector('.Carousel .list');
-        const thumbnail = document.querySelector('.Carousel .thumbnail');
+        const interval = setInterval(() => {
+            nextSlide();
+        }, 11000); // Cambiar de imagen cada 16 segundos
 
-        nextBtn.onclick = function () {
-            showSlider('next');
-        };
-
-        prevBtn.onclick = function () {
-            showSlider('prev');
-        };
-
-        let timeRunning = 2000;
-        let runTimeOut;
-        let timeAutoNext = 11000;
-        let runAutoRun
-
-        function showSlider(type) {
-            const itemSlider = document.querySelectorAll('.Carousel .list .item');
-            const itemThumbnail = document.querySelectorAll('.Carousel .thumbnail .item');
-
-            if (type === 'next') {
-                listItem.appendChild(itemSlider[0]);
-                thumbnail.appendChild(itemThumbnail[0]);
-                Carousel.classList.add('next');
-            } else {
-                let positionLastItem = itemSlider.length - 1;
-                listItem.prepend(itemSlider[positionLastItem]);
-                thumbnail.prepend(itemThumbnail[positionLastItem]);
-                Carousel.classList.add('prev');
-            }
-
-            clearTimeout(runTimeOut);
-            runTimeOut = setTimeout(() => {
-                Carousel.classList.remove('next');
-                Carousel.classList.remove('prev');
-                setUserInteracted(false);
-            }, timeRunning);
-
-            clearTimeout(runAutoRun)
-
-            setUserInteracted(true);
-
-            runAutoRun = setTimeout(() => {
-                nextBtn.click();
-            }, timeAutoNext);
-
-        }
-
-
-        return () => {
-            clearTimeout(runTimeOut);
-            clearTimeout(runAutoRun);
-        };
-    }, []);
-
-    //a partir de la array de objetos que recibimos para listaremos en el Carousel, creamos una nueva con el orden modificado
-    const nuevoArray = reorganizarArray(items)
+        return () => clearInterval(interval);
+    }, [index]);
 
     return (
-        <>
-            <div className="Carousel mb-10">
-                <div className="list">
-                    {items.map((item, index) => (
-                        <div key={index} className="item absolute">
-                            <img src={item.img} alt={item.title} className="w-full" />
-                            <div className="content">
-                                <div className="author">{item.author}</div>
-                                <div className="title">{item.title}</div>
-                                <div className="topic text-primary uppercase">{item.topic}</div>
-                                <div className="des">{item.des}</div>
-                                <div className="buttons">
-                                    <button className="rounded-badge bg-base-100" onClick={() => alert(`Soy el botón ${index}`)}>Detalles</button>
-                                    <button className="rounded-badge bg-primary bg-opacity-50">Agregar</button>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                {/*thumbnail*/}
-                <div className="thumbnail">
-                    {nuevoArray.map((item, index) => (
-                        <Link to="/a" key={index} className="item rounded-xl overflow-hidden hover:scale-95 transition-transform duration-300 ease-in-out">
-                            <img src={item.img} alt={item.title} />
-                            <div className="content w-full h-auto  flex justify-around absolute bg-base-100 bg-opacity-10 p-2" style={{ backdropFilter: 'blur(10px)' }}>
-                                <div className="title text-primary">{item.author}</div>
-                                <div className="des text-accent">{item.desSmall}</div>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
-
-                {/*arrows*/}
-                <div className="arrows z-30 ">
-                    <button id="prev" className="btn-circle flex justify-center items-center bg-base-200 text-primary hover:scale-105 transition-transform duration-300 ease-in-out">
-                        ❮
-                    </button>
-                    <button id="next" className="btn-circle flex justify-center items-center bg-base-200 text-primary hover:scale-105 transition-transform duration-300 ease-in-out">
-                        ❯
-                    </button>
-                </div>
-                <div className="time bg-primary"></div>
-                <div className="Blur z-20 w-full absolute -bottom-2">
-                    <div className="w-full h-full bg-gradient-to-t from-base-100 to-transparent blur-sm"></div>
-                </div>
-
+        <div className="mt-16 mb-32 relative w-full h-auto" style={{ height: "60vh" }}>
+            <div className="absolute inset-0 flex justify-center items-center">
+                <img
+                    src={images[index]}
+                    alt={`Slide ${index}`}
+                    className="object-cover w-full h-full"
+                />
             </div>
-        </>
-    )
-}
+            <button
+                className="z-10 absolute left-0 top-1/2 transform -translate-y-1/2 btn border-none rounded-r-full"
+                onClick={prevSlide}
+            >
+                <FaChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+                className="z-10 absolute right-0 top-1/2 transform -translate-y-1/2 btn border-none rounded-l-full"
+                onClick={nextSlide}
+            >
+                <FaChevronRight className="h-6 w-6" />
+            </button>
+            <div className="w-full absolute -bottom-2" style={{ height: "200px" }}>
+                <div className="w-full h-full bg-gradient-to-t from-base-200 to-transparent blur-sm"></div>
+            </div>
+        </div>
+    );
+};

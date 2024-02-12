@@ -2,7 +2,7 @@
     width: 100%;
     height: auto;
     overflow: hidden;
-    padding: 15px;
+    padding: 4px;
     top: 0;
     /* background: black; */
     position: relative;
@@ -31,7 +31,7 @@
 }
 .logos-slide img{
     height: 25px;
-    padding-left:162px;
+    padding-left: 300px;
 }
 
 @media(max-width:1000px){

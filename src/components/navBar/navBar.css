@@ -81,11 +81,6 @@ i{
 
 
  /*responsive*/   
- @media (min-width: 994px) {
-  .headerNav ul{
-
-  }
-}
  @media(max-width:1000px){
     .headerNav .logo{
         display: none;

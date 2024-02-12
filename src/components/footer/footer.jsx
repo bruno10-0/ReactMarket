@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 mt-2 bg-base-100 text-base-content">
+            <footer className="footer p-10 bg-base-100 text-base-content">
                 <nav>
                     <h6 className="footer-title">Visita nuestro local</h6>
                     <a href="https://www.google.com/maps/@-27.3693929,-55.8978413,20.25z?entry=ttu" target="_blank" rel="noopener noreferrer" className="link link-hover">Esquina Junín, Entre Ríos 1234</a>
@@ -22,9 +22,7 @@ export const Footer = () => {
                     <h6 className="footer-title">ReactMarket</h6>
                     <a className="link link-hover">Acerca de nosotros</a>
                     <a className="link link-hover">Contáctenos</a>
-                    <a className="link link-hover">
-                        <Link to="/productos">Tienda</Link>
-                    </a>
+                    <Link to="/productos" className="link link-hover">Tienda</Link>
                 </nav>
                 <nav>
                     <h6 className="footer-title">Social</h6>

@@ -1,7 +1,7 @@
 import { CiSearch, CiInstagram } from "react-icons/ci";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaWhatsapp, FaBars } from "react-icons/fa";
-import { TbColorSwatch } from "react-icons/tb";
+import { GiYinYang } from "react-icons/gi";
 import { useState, useEffect } from "react";
 import { useTheme } from "../../context/Context";
 import { Link } from 'react-router-dom';
@@ -38,13 +38,14 @@ export const NavBar = () => {
     }, [animate]);
     //lista de themas, nos ayudara a listar los botones para cambiar de tema
     const themes = [
-        "lofi",
+        "yin",
+        "yang",
       ];
 
     const { changeTheme } = useTheme();
 
     useEffect(() => {
-        const storedTheme = localStorage.getItem('reacMarketTheme');
+        const storedTheme = localStorage.getItem('reactMarketTheme');
         if (storedTheme) {
             changeTheme(storedTheme);
         }
@@ -52,7 +53,7 @@ export const NavBar = () => {
 
     const handleThemeChange = (newTheme) => {
         changeTheme(newTheme);
-        localStorage.setItem('reacMarketTheme', newTheme);
+        localStorage.setItem('reactMarketTheme', newTheme);
     };
 
 
@@ -67,7 +68,7 @@ export const NavBar = () => {
                             <svg
                                 width="30"
                                 height="30"
-                                viewBox="0 0 76 65"
+                                viewBox="0 0 100 100"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" className="fill-primary" />
                             </svg>
@@ -105,20 +106,20 @@ export const NavBar = () => {
                 {/*contenedor de iconos de tema y carrito*/}
                 <div className="gap-4 flex justify-center items-center mx-4 lg:mr-12">
                     <div tabIndex={0} className="dropdown dropdown-end max-h-[calc(100vh-300px)]">
-                        <TbColorSwatch tabIndex={0} role="button" className="text-2xl" />
+                        <GiYinYang tabIndex={0} role="button" className="text-2xl" />
                         <div
                             tabIndex={0}
-                            className=" shadow-2xl mt-8 rounded-badge dropdown-content max-h-[calc(100vh-20rem)] md:max-h-[calc(100vh-10rem)] w-48 md:w-56 overflow-y-auto bg-base-200 flex flex-col gap-2 p-4"
+                            className=" shadow-2xl mt-8 rounded-badge dropdown-content max-h-[calc(100vh-20rem)] md:max-h-[calc(100vh-10rem)] w-48 md:w-56 overflow-y-auto bg-base-100 flex flex-col gap-2 p-4"
                         >
 
                             {themes.map((theme, index) => (
                                 <button
                                     data-theme={theme}
                                     key={index}
-                                    className="px-4 py-3 gap-2 outline-offset-4 flex justify-evenly items-center rounded-badge bg-base-100 hover:scale-105 ease-in-out duration-100"
+                                    className="px-4 py-3 gap-2 outline-offset-4 flex justify-evenly items-center rounded-badge bg-base-200 hover:scale-105 ease-in-out duration-100"
                                     onClick={() => handleThemeChange(theme)}
                                 >
-                                    <p data-theme={theme} className="flex-grow text-sm">{theme}</p>
+                                    <p data-theme={theme} className="flex-grow text-sm bg-base-200">{theme}</p>
                                     <div className="flex h-full gap-1">
                                         <span data-theme={theme} className="bg-primary rounded-badge w-2 text-primary">1</span>
                                         <span data-theme={theme} className="bg-secondary rounded-badge w-2 text-secondary">2</span>
@@ -129,22 +130,22 @@ export const NavBar = () => {
                             ))}
                         </div>
                     </div>
-                    <div tabIndex={0} className={`cart relative cursor-pointer dropdown dropdown-end max-h-[calc(100vh-300px)]  ${animate ? 'animate' : ''}`}>
+                    <div tabIndex={0} className={`cart relative cursor-pointer dropdown dropdown-end max-h-[calc(100vh-300px)] ${animate ? 'animate' : ''}`}>
                         <FiShoppingCart tabIndex={0} role="button" className="text-2xl" />
                         <i className="w-5 h-5 flex items-center justify-center absolute -top-2 -right-3 rounded-full bg-primary text-base-100">
                             <p style={{ letterSpacing: "0px", fontFamily: "sans-serif", fontSize: '10px' }}>12</p>
                         </i>
                         <div
                             tabIndex={0}
-                            className=" shadow-2xl mt-8 rounded-badge dropdown-content  h-[calc(100vh-8rem)] w-72 overflow-y-auto bg-base-100 flex flex-col gap-2 p-4 text-primary"
+                            className="shadow-2xl mt-8 rounded-badge dropdown-content  h-[calc(100vh-8rem)] w-72 overflow-y-auto bg-base-100 flex flex-col gap-2 p-4"
                         >
-                            <h1 className="uppercase py-2 font-bold">
+                            <h1 className="uppercase py-2 font-bold text-primary">
                                 Carrito
                             </h1>
-                            <h2 className="border-y py-2" style={{ letterSpacing: "0px", fontSize: '12px' }}>
+                            <h2 className="border-y py-2 text-primary" style={{ letterSpacing: "0px", fontSize: '12px' }}>
                                 Gasta $5.000 más y obtén envío gratis! (SOLO DISPONIBLE PARA PEDIDOS DE POSADAS)
                             </h2>
-                            <div className="flex justify-start items-center">
+                            <div className="flex justify-start items-center text-primary">
                                 Tu carrito está vacio
                             </div>
                         </div>
