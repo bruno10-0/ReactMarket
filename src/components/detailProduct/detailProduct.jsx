@@ -1,7 +1,7 @@
 import { IoRemoveSharp, IoAddSharp } from "react-icons/io5";
 import { useState } from 'react';
 import { NavBar } from "../navBar/navBar"
-import './detailProduct.css'
+import "./detailProduct.css"
 export const DetailProduct = () => {
 
     const [productQuantity, setProductQuantity] = useState(1); // Estado para la cantidad de productos
